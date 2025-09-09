@@ -24,7 +24,3 @@ git push origin main
 Y listo, papá.
 A laburar, che.
 
-yaml
-Copiar código
-
----
