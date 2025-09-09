@@ -1,25 +1,30 @@
-bueno gente, lo explico una sola vez asi no me rompen despues. Si todavía no tienen este proyecto, hagan
+ueno gente, lo explico **una sola vez** así no me rompen después.  
 
-
+si todavía no tienen este proyecto, hagan:  
+```bash
 git clone https://github.com/fludx/SistemaGestion.git
-(elijan una ruta para esto no sean mogolicos. ej cd C:\Users\Casa\Desktop\)
+(Elegían una ruta para esto, no sean mogólicos. Ej: cd C:\Users\Casa\Desktop\)
 
+Y listo, tienen la copia en su compu.
 
-y listo, tienen la copia en su compu
-ahora, cada vez que se sienten a laburar, antes de tocar nada
+Ahora, cada vez que se sienten a laburar, antes de tocar nada:
 
-
+bash
+Copiar código
 git pull origin main
+Porque si no hacen pull y pisan cosas, les rompo la net de Nico en la cabeza.
 
+Cuando terminen sus cambios, guárdenlos con:
 
-porque si no hacen pull y pisan cosas, les rompo la net de nico en la cabeza
-cuando terminen sus cambios, guardenlos con
-
-
+bash
+Copiar código
 git add .
 git commit -m "acá ponen que hicieron"
 git push origin main
+Y listo, papá.
+A laburar, che.
 
+yaml
+Copiar código
 
-y listo papa
-a laburar che
+---
