@@ -1,7 +1,7 @@
 ueno gente, lo explico **una sola vez** así no me rompen después.  
 
 si todavía no tienen este proyecto, hagan:  
-
+```bash
 git clone https://github.com/fludx/SistemaGestion.git
 (Elegían una ruta para esto, no sean mogólicos. Ej: cd C:\Users\Casa\Desktop\)
 
