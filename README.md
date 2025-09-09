@@ -18,6 +18,8 @@ git add .
 git commit -m "acá ponen que hicieron"
 git push origin main
 ```
-y listo,papa
-a laburar che
+y listo,papa  
+
+
+A LABURAR CHE
 
