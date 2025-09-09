@@ -1,0 +1,82 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files
+
+# Build results
+Datos/bin/
+Logica/bin/
+Servicios/bin/
+Sesion/bin/
+Sistema/bin/
+Vista/bin/
+
+
+Datos/obj/
+Logica/obj/
+Servicios/obj/
+Sesion/obj/
+Sistema/obj/
+Vista/obj/
+
+
+obj/
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Auto-generated files
+Generated_Code/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Others
+*.log
+*.tlog
+*.cache
+*.pdb
+
+# NuGet packages
+*.nupkg
+packages/
+# Except build/project specific packages folder
+!packages/build/
+
+# Environment secrets
+.env
+*.secret.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Others (optional)
+TestResults/
+*.vspscc
+*.vssscc
+
+# Publish output
+publish/
+
+# dotnet user secrets
+**/secrets.json
+
+# Local application data
+.localhistory/
+
+# Azure Functions artifacts
+.local.settings.json
+
+# WebAssembly artifacts
+wwwroot/dist/
+wwwroot/assets/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
