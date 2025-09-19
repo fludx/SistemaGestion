@@ -1,0 +1,274 @@
+-- ========================
+-- TABLAS DE REFERENCIA
+-- ========================
+CREATE TABLE Categorias (
+    id_categoria INT IDENTITY PRIMARY KEY,
+    nombre NVARCHAR(100) NOT NULL
+);
+
+-- ========================
+-- PRODUCTOS
+-- ========================
+CREATE TABLE Productos (
+    id_producto INT IDENTITY PRIMARY KEY,
+    codigo NVARCHAR(50) UNIQUE NOT NULL,
+    id_categoria INT NOT NULL,
+    nombre NVARCHAR(150) NOT NULL,
+    descripcion NVARCHAR(500),
+    marca NVARCHAR(100),
+    precio_compra DECIMAL(18,2),
+    precio_venta DECIMAL(18,2),
+    stock_minimo INT DEFAULT 0,
+    stock_ideal INT DEFAULT 0,
+    stock_maximo INT DEFAULT 0,
+    punto_reposicion INT DEFAULT 0,
+    tipo_stock NVARCHAR(20) CHECK (tipo_stock IN ('Existencia','JIT'))
+);
+
+CREATE TABLE Stock_Productos (
+    id_stock INT IDENTITY PRIMARY KEY,
+    id_producto INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    cantidad INT NOT NULL,
+    fecha_ingreso DATE NOT NULL
+);
+
+-- ========================
+-- PROVEEDORES
+-- ========================
+CREATE TABLE Proveedores (
+    id_proveedor INT IDENTITY PRIMARY KEY,
+    codigo NVARCHAR(50) UNIQUE NOT NULL,
+    razon_social NVARCHAR(200) NOT NULL,
+    email NVARCHAR(200),
+    formas_pago NVARCHAR(200),
+    tiempos_entrega NVARCHAR(100),
+    descuentos NVARCHAR(200)
+);
+
+CREATE TABLE Contactos_Proveedores (
+    id_contacto INT IDENTITY PRIMARY KEY,
+    id_proveedor INT NOT NULL,
+    contacto NVARCHAR(100),
+    sector NVARCHAR(100),
+    telefono NVARCHAR(50),
+    email NVARCHAR(200),
+    horarios NVARCHAR(200)
+);
+
+CREATE TABLE Proveedor_Direcciones (
+    id_direccion INT IDENTITY PRIMARY KEY,
+    id_proveedor INT NOT NULL,
+    direccion NVARCHAR(250)
+);
+
+CREATE TABLE Proveedor_Productos (
+    id_proveedor INT NOT NULL,
+    id_producto INT NOT NULL,
+    PRIMARY KEY (id_proveedor, id_producto)
+);
+
+-- ========================
+-- ORDENES DE COMPRA
+-- ========================
+CREATE TABLE Ordenes_Compra (
+    id_orden_compra INT IDENTITY PRIMARY KEY,
+    id_proveedor INT NOT NULL,
+    fecha DATE NOT NULL,
+    estado NVARCHAR(50) DEFAULT 'Pendiente',
+    observaciones NVARCHAR(500)
+);
+
+CREATE TABLE Ordenes_Compra_Detalle (
+    id_detalle INT IDENTITY PRIMARY KEY,
+    id_orden_compra INT NOT NULL,
+    id_producto INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(18,2)
+);
+
+CREATE TABLE Devoluciones_Proveedor (
+    id_devolucion INT IDENTITY PRIMARY KEY,
+    id_orden_compra INT NOT NULL,
+    id_producto INT NOT NULL,
+    fecha DATE NOT NULL,
+    motivo NVARCHAR(200),
+    cantidad INT NOT NULL
+);
+
+-- ========================
+-- CLIENTES
+-- ========================
+CREATE TABLE Clientes (
+    id_cliente INT IDENTITY PRIMARY KEY,
+    codigo NVARCHAR(50) UNIQUE NOT NULL,
+    razon_social NVARCHAR(200) NOT NULL,
+    email NVARCHAR(200),
+    formas_pago NVARCHAR(200),
+    descuentos NVARCHAR(200),
+    limite_credito DECIMAL(18,2)
+);
+
+CREATE TABLE Contactos_Clientes (
+    id_contacto INT IDENTITY PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    contacto NVARCHAR(100),
+    sector NVARCHAR(100),
+    telefono NVARCHAR(50),
+    email NVARCHAR(200),
+    horarios NVARCHAR(200)
+);
+
+CREATE TABLE Cliente_Direcciones (
+    id_direccion INT IDENTITY PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    direccion NVARCHAR(250)
+);
+
+-- ========================
+-- ORDENES DE VENTA
+-- ========================
+CREATE TABLE Ordenes_Venta (
+    id_orden_venta INT IDENTITY PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    fecha DATE NOT NULL,
+    estado NVARCHAR(50) DEFAULT 'Pendiente',
+    observaciones NVARCHAR(500)
+);
+
+CREATE TABLE Ordenes_Venta_Detalle (
+    id_detalle INT IDENTITY PRIMARY KEY,
+    id_orden_venta INT NOT NULL,
+    id_producto INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(18,2)
+);
+
+CREATE TABLE Devoluciones_Cliente (
+    id_devolucion INT IDENTITY PRIMARY KEY,
+    id_orden_venta INT NOT NULL,
+    id_producto INT NOT NULL,
+    fecha DATE NOT NULL,
+    motivo NVARCHAR(200),
+    cantidad INT NOT NULL
+);
+
+CREATE TABLE Stock_Reservado (
+    id_reserva INT IDENTITY PRIMARY KEY,
+    id_producto INT NOT NULL,
+    id_orden_venta INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    cantidad INT NOT NULL,
+    fecha DATE NOT NULL
+);
+
+-- ========================
+-- ALMACENES
+-- ========================
+CREATE TABLE Movimientos_Stock (
+    id_movimiento INT IDENTITY PRIMARY KEY,
+    id_producto INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    fecha DATE NOT NULL,
+    tipo NVARCHAR(50) CHECK (tipo IN ('Entrada','Salida')),
+    cantidad INT NOT NULL,
+    observaciones NVARCHAR(200)
+);
+
+CREATE TABLE Scrap (
+    id_scrap INT IDENTITY PRIMARY KEY,
+    id_producto INT NOT NULL,
+    lote NVARCHAR(50),
+    vencimiento DATE,
+    fecha DATE NOT NULL,
+    motivo NVARCHAR(100),
+    cantidad INT NOT NULL,
+    usuario NVARCHAR(100)
+);
+
+-- ========================
+-- BITACORA
+-- ========================
+CREATE TABLE Bitacora (
+    id_bitacora INT IDENTITY PRIMARY KEY,
+    usuario NVARCHAR(100),
+    fecha DATETIME DEFAULT GETDATE(),
+    accion NVARCHAR(200),
+    modulo NVARCHAR(100)
+);
+
+-- ========================
+-- FOREIGN KEYS
+-- ========================
+ALTER TABLE Productos
+    ADD CONSTRAINT FK_Productos_Categorias FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria);
+
+ALTER TABLE Stock_Productos
+    ADD CONSTRAINT FK_Stock_Productos_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Contactos_Proveedores
+    ADD CONSTRAINT FK_Contactos_Proveedores_Proveedores FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor);
+
+ALTER TABLE Proveedor_Direcciones
+    ADD CONSTRAINT FK_Proveedor_Direcciones_Proveedores FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor);
+
+ALTER TABLE Proveedor_Productos
+    ADD CONSTRAINT FK_Proveedor_Productos_Proveedores FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor);
+
+ALTER TABLE Proveedor_Productos
+    ADD CONSTRAINT FK_Proveedor_Productos_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Ordenes_Compra
+    ADD CONSTRAINT FK_Ordenes_Compra_Proveedores FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor);
+
+ALTER TABLE Ordenes_Compra_Detalle
+    ADD CONSTRAINT FK_Ordenes_Compra_Detalle_Ordenes FOREIGN KEY (id_orden_compra) REFERENCES Ordenes_Compra(id_orden_compra);
+
+ALTER TABLE Ordenes_Compra_Detalle
+    ADD CONSTRAINT FK_Ordenes_Compra_Detalle_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Devoluciones_Proveedor
+    ADD CONSTRAINT FK_Devoluciones_Proveedor_Ordenes FOREIGN KEY (id_orden_compra) REFERENCES Ordenes_Compra(id_orden_compra);
+
+ALTER TABLE Devoluciones_Proveedor
+    ADD CONSTRAINT FK_Devoluciones_Proveedor_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Contactos_Clientes
+    ADD CONSTRAINT FK_Contactos_Clientes_Clientes FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente);
+
+ALTER TABLE Cliente_Direcciones
+    ADD CONSTRAINT FK_Cliente_Direcciones_Clientes FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente);
+
+ALTER TABLE Ordenes_Venta
+    ADD CONSTRAINT FK_Ordenes_Venta_Clientes FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente);
+
+ALTER TABLE Ordenes_Venta_Detalle
+    ADD CONSTRAINT FK_Ordenes_Venta_Detalle_Ordenes FOREIGN KEY (id_orden_venta) REFERENCES Ordenes_Venta(id_orden_venta);
+
+ALTER TABLE Ordenes_Venta_Detalle
+    ADD CONSTRAINT FK_Ordenes_Venta_Detalle_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Devoluciones_Cliente
+    ADD CONSTRAINT FK_Devoluciones_Cliente_Ordenes FOREIGN KEY (id_orden_venta) REFERENCES Ordenes_Venta(id_orden_venta);
+
+ALTER TABLE Devoluciones_Cliente
+    ADD CONSTRAINT FK_Devoluciones_Cliente_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Stock_Reservado
+    ADD CONSTRAINT FK_Stock_Reservado_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Stock_Reservado
+    ADD CONSTRAINT FK_Stock_Reservado_Ordenes FOREIGN KEY (id_orden_venta) REFERENCES Ordenes_Venta(id_orden_venta);
+
+ALTER TABLE Movimientos_Stock
+    ADD CONSTRAINT FK_Movimientos_Stock_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
+
+ALTER TABLE Scrap
+    ADD CONSTRAINT FK_Scrap_Productos FOREIGN KEY (id_producto) REFERENCES Productos(id_producto);
