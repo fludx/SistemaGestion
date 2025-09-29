@@ -44,30 +44,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="L_BuscarUsuario.cs" />
-    <Compile Include="L_CrearCodigo2FA.cs" />
-    <Compile Include="L_ListarPersonas.cs" />
-    <Compile Include="L_Log.cs" />
-    <Compile Include="L_Mensajes.cs" />
-    <Compile Include="L_ModificarUsuario.cs" />
-    <Compile Include="L_CambioObligatorio.cs" />
-    <Compile Include="L_CrearRespuesta.cs" />
-    <Compile Include="L_HistorialContras.cs" />
-    <Compile Include="L_CrearPregunta.cs" />
-    <Compile Include="L_EjecutarBusquedaCP.cs" />
-    <Compile Include="L_Lista.cs" />
-    <Compile Include="L_ListarPreguntas.cs" />
-    <Compile Include="L_ListarUsuarios.cs" />
-    <Compile Include="L_Login.cs" />
-    <Compile Include="L_RegistrarUsuario.cs" />
-    <Compile Include="L_Registro.cs" />
-    <Compile Include="L_ResponderRespuestas.cs" />
-    <Compile Include="L_Restriccion.cs" />
-    <Compile Include="L_Traer_Genero.cs" />
-    <Compile Include="L_VerificarCodigo2FA.cs" />
+    <Compile Include="Logica gestion\L_BuscarUsuario.cs" />
+    <Compile Include="Logica gestion\L_CrearCodigo2FA.cs" />
+    <Compile Include="Logica gestion\L_ListarPersonas.cs" />
+    <Compile Include="Logica gestion\L_Log.cs" />
+    <Compile Include="Logica gestion\L_Mensajes.cs" />
+    <Compile Include="Logica gestion\L_ModificarUsuario.cs" />
+    <Compile Include="Logica gestion\L_CambioObligatorio.cs" />
+    <Compile Include="Logica gestion\L_CrearRespuesta.cs" />
+    <Compile Include="Logica gestion\L_HistorialContras.cs" />
+    <Compile Include="Logica gestion\L_CrearPregunta.cs" />
+    <Compile Include="Logica gestion\L_EjecutarBusquedaCP.cs" />
+    <Compile Include="Logica gestion\L_Lista.cs" />
+    <Compile Include="Logica gestion\L_ListarPreguntas.cs" />
+    <Compile Include="Logica gestion\L_ListarUsuarios.cs" />
+    <Compile Include="Logica gestion\L_Login.cs" />
+    <Compile Include="Logica gestion\L_RegistrarUsuario.cs" />
+    <Compile Include="Logica gestion\L_Registro.cs" />
+    <Compile Include="Logica gestion\L_ResponderRespuestas.cs" />
+    <Compile Include="Logica gestion\L_Restriccion.cs" />
+    <Compile Include="Logica gestion\L_Traer_Genero.cs" />
+    <Compile Include="Logica gestion\L_VerificarCodigo2FA.cs" />
     <Compile Include="PreguntaVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="L_ResponderPreguntas.cs" />
+    <Compile Include="Logica gestion\L_ResponderPreguntas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
@@ -85,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logica Stock\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
