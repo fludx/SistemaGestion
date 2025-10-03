@@ -94,6 +94,36 @@
     <Compile Include="frmEditarUsuario.Designer.cs">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLote.Designer.cs">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMercaderia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMercaderia.Designer.cs">
+      <DependentUpon>FrmMercaderia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotaPedido.Designer.cs">
+      <DependentUpon>FrmNotaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrdenCompra.Designer.cs">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPresu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresu.Designer.cs">
+      <DependentUpon>FrmPresu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +142,35 @@
     <Compile Include="FrmPedidos.Designer.cs">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPresuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresuCliente.Designer.cs">
+      <DependentUpon>FrmPresuCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProdProv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProdProv.Designer.cs">
       <DependentUpon>FrmProdProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRemitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRemitos.Designer.cs">
+      <DependentUpon>FrmRemitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporVentas1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporVentas1.Designer.cs">
+      <DependentUpon>FrmReporVentas1.cs</DependentUpon>
     </Compile>
     <Compile Include="frmResponderPreguntas.cs">
       <SubType>Form</SubType>
@@ -178,6 +232,18 @@
     <Compile Include="frmResponderRespuesta.Designer.cs">
       <DependentUpon>frmResponderRespuesta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmScrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScrap.Designer.cs">
+      <DependentUpon>FrmScrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStock.Designer.cs">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarioNombre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +278,21 @@
     <EmbeddedResource Include="frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLote.resx">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMercaderia.resx">
+      <DependentUpon>FrmMercaderia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotaPedido.resx">
+      <DependentUpon>FrmNotaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrdenCompra.resx">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresu.resx">
+      <DependentUpon>FrmPresu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,11 +311,17 @@
     <EmbeddedResource Include="frmMensajes.resx">
       <DependentUpon>frmMensajes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPoliticasSeguridad.resx">
       <DependentUpon>frmPoliticasSeguridad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPreguntasDeSeguridad.resx">
       <DependentUpon>frmPreguntasDeSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresuCliente.resx">
+      <DependentUpon>FrmPresuCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProdProv.resx">
       <DependentUpon>FrmProdProv.cs</DependentUpon>
@@ -245,11 +332,26 @@
     <EmbeddedResource Include="frmRegistrarPersonas.resx">
       <DependentUpon>frmRegistrarPersonas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRemitos.resx">
+      <DependentUpon>FrmRemitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporVentas1.resx">
+      <DependentUpon>FrmReporVentas1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmResponderPreguntas.resx">
       <DependentUpon>frmResponderPreguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmResponderRespuesta.resx">
       <DependentUpon>frmResponderRespuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScrap.resx">
+      <DependentUpon>FrmScrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStock.resx">
+      <DependentUpon>FrmStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarioNombre.resx">
       <DependentUpon>frmUsuarioNombre.cs</DependentUpon>
