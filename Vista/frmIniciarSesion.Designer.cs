@@ -165,10 +165,11 @@ namespace Vista
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(384, 122);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(134, 32);
+            this.lblUsuario.Size = new System.Drawing.Size(135, 33);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "USUARIO:";
             // 

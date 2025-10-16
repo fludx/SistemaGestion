@@ -362,7 +362,20 @@ namespace Vista
             frmCambiar.Show();
         }
 
+        
+         private void vERSTOCKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del otro MDI (stock)
+            MDIStock ventanaStock = new MDIStock();
+
+            // Mostrar la ventana
+            ventanaStock.Show();
+
+            // Opcional: ocultar la ventana actual si no la querés visible
+            this.Hide();
+        }
 
     }
 }
+
 

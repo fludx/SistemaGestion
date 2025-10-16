@@ -46,6 +46,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ModificarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vERSTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.MensajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,8 @@
             this.PersonasToolStripMenuItem,
             this.ConfiguracionToolStripMenuItem,
             this.ReportesToolStripMenuItem,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.vERSTOCKToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1355, 52);
@@ -235,6 +237,14 @@
             this.CerrarSesionToolStripMenuItem.Text = "CERRAR SESION";
             this.CerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesionToolStripMenuItem_Click);
             // 
+            // vERSTOCKToolStripMenuItem
+            // 
+            this.vERSTOCKToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vERSTOCKToolStripMenuItem.Name = "vERSTOCKToolStripMenuItem";
+            this.vERSTOCKToolStripMenuItem.Size = new System.Drawing.Size(123, 48);
+            this.vERSTOCKToolStripMenuItem.Text = "VER STOCK";
+            this.vERSTOCKToolStripMenuItem.Click += new System.EventHandler(this.vERSTOCKToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -264,7 +274,7 @@
             this.MensajesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MensajesToolStripMenuItem.Name = "MensajesToolStripMenuItem";
             this.MensajesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.MensajesToolStripMenuItem.Size = new System.Drawing.Size(152, 48);
+            this.MensajesToolStripMenuItem.Size = new System.Drawing.Size(156, 48);
             this.MensajesToolStripMenuItem.Text = "MENSAJES";
             this.MensajesToolStripMenuItem.Click += new System.EventHandler(this.MensajesToolStripMenuItem_Click);
             // 
@@ -367,6 +377,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem CerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ModificarContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vERSTOCKToolStripMenuItem;
     }
 }
 
