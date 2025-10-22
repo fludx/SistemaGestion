@@ -48,6 +48,7 @@
     <Compile Include="Conecction\ConnectionBD.cs" />
     <Compile Include="Conecction\Ejeconsultas_Stock.cs" />
     <Compile Include="DTOs Stock\Datos_DTOs.cs" />
+    <Compile Include="DTOs Stock\DetalleOrdenCompraDTO.cs" />
     <Compile Include="DTOs Stock\Ordenes_De_Compras_DTOs.cs" />
     <Compile Include="DTOs Stock\Proveedores_DTOs.cs" />
     <Compile Include="DTOs Stock\Reportes_DTOs.cs" />
