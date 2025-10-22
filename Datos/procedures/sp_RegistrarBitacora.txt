@@ -1,0 +1,11 @@
+CREATE OR ALTER PROCEDURE dbo.sp_RegistrarBitacora
+    @usuario NVARCHAR(100),
+    @accion NVARCHAR(200),
+    @modulo NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Bitacora (usuario, fecha, accion, modulo)
+    VALUES (@usuario, GETDATE(), @accion, @modulo);
+END
+GO

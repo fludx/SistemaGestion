@@ -1,0 +1,15 @@
+CREATE OR ALTER PROCEDURE dbo.sp_BuscarProducto
+    @codigo NVARCHAR(50) = NULL,
+    @nombre NVARCHAR(150) = NULL,
+    @id_categoria INT = NULL,
+    @marca NVARCHAR(100) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * FROM Productos
+    WHERE (@codigo IS NULL OR codigo = @codigo)
+      AND (@nombre IS NULL OR nombre LIKE '%' + @nombre + '%')
+      AND (@id_categoria IS NULL OR id_categoria = @id_categoria)
+      AND (@marca IS NULL OR marca LIKE '%' + @marca + '%');
+END
+GO

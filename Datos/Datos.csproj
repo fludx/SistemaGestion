@@ -47,10 +47,10 @@
     <Compile Include="Conecction\Conexion_stock.cs" />
     <Compile Include="Conecction\ConnectionBD.cs" />
     <Compile Include="Conecction\Ejeconsultas_Stock.cs" />
-    <Compile Include="DROs Stock\Datos_DTOs.cs" />
-    <Compile Include="DROs Stock\Ordenes_De_Compras_DTOs.cs" />
-    <Compile Include="DROs Stock\Proveedores_DTOs.cs" />
-    <Compile Include="DROs Stock\Reportes_DTOs.cs" />
+    <Compile Include="DTOs Stock\Datos_DTOs.cs" />
+    <Compile Include="DTOs Stock\Ordenes_De_Compras_DTOs.cs" />
+    <Compile Include="DTOs Stock\Proveedores_DTOs.cs" />
+    <Compile Include="DTOs Stock\Reportes_DTOs.cs" />
     <Compile Include="DTOs\CambioObligatorioDTO.cs" />
     <Compile Include="DTOs\CodigoPostalDTO.cs" />
     <Compile Include="DTOs\HistorialContrasDTO.cs" />

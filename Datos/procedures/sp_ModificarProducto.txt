@@ -1,0 +1,33 @@
+CREATE OR ALTER PROCEDURE dbo.sp_ModificarProducto
+    @id_producto INT,
+    @codigo NVARCHAR(50),
+    @id_categoria INT,
+    @nombre NVARCHAR(150),
+    @descripcion NVARCHAR(500) = NULL,
+    @marca NVARCHAR(100) = NULL,
+    @precio_compra DECIMAL(18,2) = NULL,
+    @precio_venta DECIMAL(18,2) = NULL,
+    @stock_minimo INT = 0,
+    @stock_ideal INT = 0,
+    @stock_maximo INT = 0,
+    @punto_reposicion INT = 0,
+    @tipo_stock NVARCHAR(20) = 'Existencia'
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE Productos
+    SET codigo = @codigo,
+        id_categoria = @id_categoria,
+        nombre = @nombre,
+        descripcion = @descripcion,
+        marca = @marca,
+        precio_compra = @precio_compra,
+        precio_venta = @precio_venta,
+        stock_minimo = @stock_minimo,
+        stock_ideal = @stock_ideal,
+        stock_maximo = @stock_maximo,
+        punto_reposicion = @punto_reposicion,
+        tipo_stock = @tipo_stock
+    WHERE id_producto = @id_producto;
+END
+GO

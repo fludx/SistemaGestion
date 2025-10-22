@@ -1,0 +1,16 @@
+CREATE OR ALTER PROCEDURE dbo.sp_AltaCliente
+    @codigo NVARCHAR(50),
+    @razon_social NVARCHAR(200),
+    @email NVARCHAR(200) = NULL,
+    @formas_pago NVARCHAR(200) = NULL,
+    @descuentos NVARCHAR(200) = NULL,
+    @limite_credito DECIMAL(18,2) = 0
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Clientes (codigo, razon_social, email, formas_pago, descuentos, limite_credito)
+    VALUES (@codigo, @razon_social, @email, @formas_pago, @descuentos, @limite_credito);
+
+    SELECT SCOPE_IDENTITY() AS id_cliente;
+END
+GO

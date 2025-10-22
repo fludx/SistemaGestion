@@ -1,0 +1,24 @@
+CREATE OR ALTER PROCEDURE dbo.sp_AltaProducto
+    @codigo NVARCHAR(50),
+    @id_categoria INT,
+    @nombre NVARCHAR(150),
+    @descripcion NVARCHAR(500) = NULL,
+    @marca NVARCHAR(100) = NULL,
+    @precio_compra DECIMAL(18,2) = NULL,
+    @precio_venta DECIMAL(18,2) = NULL,
+    @stock_minimo INT = 0,
+    @stock_ideal INT = 0,
+    @stock_maximo INT = 0,
+    @punto_reposicion INT = 0,
+    @tipo_stock NVARCHAR(20) = 'Existencia'
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Productos (codigo, id_categoria, nombre, descripcion, marca, precio_compra, precio_venta,
+                           stock_minimo, stock_ideal, stock_maximo, punto_reposicion, tipo_stock)
+    VALUES (@codigo, @id_categoria, @nombre, @descripcion, @marca, @precio_compra, @precio_venta,
+            @stock_minimo, @stock_ideal, @stock_maximo, @punto_reposicion, @tipo_stock);
+
+    SELECT SCOPE_IDENTITY() AS id_producto;
+END
+GO

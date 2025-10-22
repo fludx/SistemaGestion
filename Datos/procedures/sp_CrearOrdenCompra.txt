@@ -1,0 +1,14 @@
+CREATE OR ALTER PROCEDURE dbo.sp_CrearOrdenCompra
+    @id_proveedor INT,
+    @fecha DATE,
+    @estado NVARCHAR(50) = 'Pendiente',
+    @observaciones NVARCHAR(500) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Ordenes_Compra (id_proveedor, fecha, estado, observaciones)
+    VALUES (@id_proveedor, @fecha, @estado, @observaciones);
+
+    SELECT SCOPE_IDENTITY() AS id_orden_compra;
+END
+GO

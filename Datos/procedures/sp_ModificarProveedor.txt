@@ -1,0 +1,21 @@
+CREATE OR ALTER PROCEDURE dbo.sp_ModificarProveedor
+    @id_proveedor INT,
+    @codigo NVARCHAR(50),
+    @razon_social NVARCHAR(200),
+    @email NVARCHAR(200) = NULL,
+    @formas_pago NVARCHAR(200) = NULL,
+    @tiempos_entrega NVARCHAR(100) = NULL,
+    @descuentos NVARCHAR(200) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE Proveedores
+    SET codigo = @codigo,
+        razon_social = @razon_social,
+        email = @email,
+        formas_pago = @formas_pago,
+        tiempos_entrega = @tiempos_entrega,
+        descuentos = @descuentos
+    WHERE id_proveedor = @id_proveedor;
+END
+GO

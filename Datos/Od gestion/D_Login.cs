@@ -45,7 +45,7 @@ namespace Datos
                     idUsuario = id;
                 }
 
-                esAdmin = (bool)adminParam.Value;
+                esAdmin = adminParam.Value != DBNull.Value && (bool)adminParam.Value;
                 nombreRol = rolParam.Value.ToString();
             }
 

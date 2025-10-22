@@ -1,0 +1,17 @@
+CREATE OR ALTER PROCEDURE dbo.sp_AgregarDetalleVenta
+    @id_orden_venta INT,
+    @id_producto INT,
+    @lote NVARCHAR(50) = NULL,
+    @vencimiento DATE = NULL,
+    @cantidad INT,
+    @precio_unitario DECIMAL(18,2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Ordenes_Venta_Detalle (id_orden_venta, id_producto, lote, vencimiento, cantidad, precio_unitario)
+    VALUES (@id_orden_venta, @id_producto, @lote, @vencimiento, @cantidad, @precio_unitario);
+
+    INSERT INTO Stock_Reservado (id_producto, id_orden_venta, lote, vencimiento, cantidad, fecha)
+    VALUES (@id_producto, @id_orden_venta, @lote, @vencimiento, @cantidad, CAST(GETDATE() AS DATE));
+END
+GO

@@ -1,0 +1,11 @@
+CREATE OR ALTER PROCEDURE dbo.sp_ListarClientes
+    @razon_social NVARCHAR(200) = NULL,
+    @codigo NVARCHAR(50) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * FROM Clientes
+    WHERE (@razon_social IS NULL OR razon_social LIKE '%' + @razon_social + '%')
+      AND (@codigo IS NULL OR codigo = @codigo);
+END
+GO

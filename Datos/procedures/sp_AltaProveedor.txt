@@ -1,0 +1,16 @@
+CREATE OR ALTER PROCEDURE dbo.sp_AltaProveedor
+    @codigo NVARCHAR(50),
+    @razon_social NVARCHAR(200),
+    @email NVARCHAR(200) = NULL,
+    @formas_pago NVARCHAR(200) = NULL,
+    @tiempos_entrega NVARCHAR(100) = NULL,
+    @descuentos NVARCHAR(200) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO Proveedores (codigo, razon_social, email, formas_pago, tiempos_entrega, descuentos)
+    VALUES (@codigo, @razon_social, @email, @formas_pago, @tiempos_entrega, @descuentos);
+
+    SELECT SCOPE_IDENTITY() AS id_proveedor;
+END
+GO
