@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Datos.DTOs_Stock
 {
-    internal class ProveedorDeProductoDTO
+    public class ProveedorDeProductoDTO
     {
+        public int IdProveedor { get; set; }
+        public string CodigoProveedor { get; set; }
+        public string RazonSocial { get; set; }
+        public string Email { get; set; }
+        public string FormasPago { get; set; }
+        public string TiemposEntrega { get; set; }
+        public string Descuentos { get; set; }
     }
 }
+

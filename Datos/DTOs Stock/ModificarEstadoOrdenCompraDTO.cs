@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Datos.DTOs_Stock
 {
-    internal class ModificarEstadoOrdenCompraDTO
+    public class ModificarEstadoOrdenCompraDTO
     {
+        public int IdOrdenCompra { get; set; }
+        public string Estado { get; set; }
     }
 }
+
