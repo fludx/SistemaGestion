@@ -47,6 +47,12 @@
     <Compile Include="Conecction\Conexion_stock.cs" />
     <Compile Include="Conecction\ConnectionBD.cs" />
     <Compile Include="Conecction\Ejeconsultas_Stock.cs" />
+    <Compile Include="DTOs Producto\ActualizarStockDTO.cs" />
+    <Compile Include="DTOs Producto\ProductoBuscarDTO.cs" />
+    <Compile Include="DTOs Producto\ProductoDTO.cs" />
+    <Compile Include="DTOs Producto\ProductoEliminarDTO.cs" />
+    <Compile Include="DTOs Producto\ProductoListadoDTO.cs" />
+    <Compile Include="DTOs Producto\ProductoModificarDTO.cs" />
     <Compile Include="DTOs Stock\Datos_DTOs.cs" />
     <Compile Include="DTOs Stock\DetalleOrdenCompraDTO.cs" />
     <Compile Include="DTOs Stock\DetalleOrdenCompraDTO_1.cs" />
@@ -90,6 +96,12 @@
     <Compile Include="Od gestion\D_ResponderRespuestas.cs" />
     <Compile Include="Od gestion\D_Restriccion.cs" />
     <Compile Include="Od gestion\D_Verificacion2FA.cs" />
+    <Compile Include="Od Producto\Od_ModificarProducto.cs" />
+    <Compile Include="Od Producto\Od_EliminarProducto.cs" />
+    <Compile Include="Od Producto\Od_ListarProductos.cs" />
+    <Compile Include="Od Producto\Od_BuscarProducto.cs" />
+    <Compile Include="Od Producto\Od_ActualizarStock.cs" />
+    <Compile Include="Od Producto\Od_AltaProducto.cs" />
     <Compile Include="Od Stock\Od_AgregarDetalleOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_AltaOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_AltaProveedorContacto.cs" />
@@ -114,5 +126,6 @@
       <Name>Sesion</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
