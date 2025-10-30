@@ -47,6 +47,10 @@
     <Compile Include="Conecction\Conexion_stock.cs" />
     <Compile Include="Conecction\ConnectionBD.cs" />
     <Compile Include="Conecction\Ejeconsultas_Stock.cs" />
+    <Compile Include="DTOs Clientes\ClienteDTO.cs" />
+    <Compile Include="DTOs Clientes\ClienteEliminarDTO.cs" />
+    <Compile Include="DTOs Clientes\ClienteListadoDTO.cs" />
+    <Compile Include="DTOs Clientes\ClienteModificarDTO.cs" />
     <Compile Include="DTOs OrdenCompra\DevolucionProveedorDTO.cs" />
     <Compile Include="DTOs OrdenCompra\OrdenCompraCrearDTO.cs" />
     <Compile Include="DTOs OrdenCompra\RecepcionCompraRegistrarDTO.cs" />
@@ -60,6 +64,10 @@
     <Compile Include="DTOs provee\ProveedorDTO.cs" />
     <Compile Include="DTOs provee\ProveedorEliminarDTO.cs" />
     <Compile Include="DTOs provee\ProveedorModificarDTO.cs" />
+    <Compile Include="DTOs Reportes\ReporteStockGeneralDTO.cs" />
+    <Compile Include="DTOs Reportes\VerificarPuntoReposicionDTO.cs" />
+    <Compile Include="DTOs Scrap\MovimientoStockDTO.cs" />
+    <Compile Include="DTOs Scrap\ScrapDTO.cs" />
     <Compile Include="DTOs Stock\Datos_DTOs.cs" />
     <Compile Include="DTOs Stock\DetalleOrdenCompraDTO.cs" />
     <Compile Include="DTOs Stock\DetalleOrdenCompraDTO_1.cs" />
@@ -75,6 +83,10 @@
     <Compile Include="DTOs Stock\ReporteComprasPorProductoDTO.cs" />
     <Compile Include="DTOs Stock\ReporteComprasPorProveedorDTO.cs" />
     <Compile Include="DTOs Stock\Reportes_DTOs.cs" />
+    <Compile Include="DTOs Ventas\DetalleVentaDTO.cs" />
+    <Compile Include="DTOs Ventas\DevolucionClienteDTO.cs" />
+    <Compile Include="DTOs Ventas\EntregaVentaDTO.cs" />
+    <Compile Include="DTOs Ventas\OrdenVentaDTO.cs" />
     <Compile Include="DTOs\CambioObligatorioDTO.cs" />
     <Compile Include="DTOs\CodigoPostalDTO.cs" />
     <Compile Include="DTOs\HistorialContrasDTO.cs" />
@@ -82,6 +94,11 @@
     <Compile Include="DTOs\PreguntaDTO.cs" />
     <Compile Include="DTOs\RolDTO.cs" />
     <Compile Include="DTOs\UsuarioDTO.cs" />
+    <Compile Include="Od Bitacora\Od_RegistrarBitacora.cs" />
+    <Compile Include="Od Clientes\Od_AltaCliente.cs" />
+    <Compile Include="Od Clientes\Od_ModificarCliente.cs" />
+    <Compile Include="Od Clientes\Od_EliminarCliente.cs" />
+    <Compile Include="Od Clientes\Od_ListarClientes.cs" />
     <Compile Include="Od gestion\D_BuscarUsuario.cs" />
     <Compile Include="Od gestion\D_BusquedaCP.cs" />
     <Compile Include="Od gestion\D_CambioObligatorio.cs" />
@@ -116,6 +133,10 @@
     <Compile Include="Od Provee\Od_ModificarProveedor.cs" />
     <Compile Include="Od Provee\Od_EliminarProveedor.cs" />
     <Compile Include="Od Provee\Od_ListarProveedores.cs" />
+    <Compile Include="Od Reportes\Od_ReporteStockGeneral.cs" />
+    <Compile Include="Od Reportes\Od_VerificarPuntoReposicion.cs" />
+    <Compile Include="Od Scrap\Od_RegistrarMovimientoStock.cs" />
+    <Compile Include="Od Scrap\Od_RegistrarScrap.cs" />
     <Compile Include="Od Stock\Od_AgregarDetalleOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_AltaOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_AltaProveedorContacto.cs" />
@@ -128,6 +149,10 @@
     <Compile Include="Od Stock\Od_RelacionarProductoProveedor.cs" />
     <Compile Include="Od Stock\Od_ReporteComprasPorProducto.cs" />
     <Compile Include="Od Stock\Od_ReporteComprasPorProveedor.cs" />
+    <Compile Include="Od Ventas\Od_CrearOrdenVenta.cs" />
+    <Compile Include="Od Ventas\Od_AgregarDetalleVenta.cs" />
+    <Compile Include="Od Ventas\Od_RegistrarEntregaVenta.cs" />
+    <Compile Include="Od Ventas\Od_DevolucionCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Od gestion\D_Traer_Genero.cs" />
   </ItemGroup>
@@ -140,6 +165,8 @@
       <Name>Sesion</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DTOs Bitacora\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

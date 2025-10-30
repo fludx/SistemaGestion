@@ -87,10 +87,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Logica Bitacora\" />
+    <Folder Include="Logica Clientes\" />
     <Folder Include="Logica OrdenCompra\" />
     <Folder Include="Logica Producto\" />
     <Folder Include="Logica Provee\" />
+    <Folder Include="Logica Reportes\" />
+    <Folder Include="Logica Scrap\" />
     <Folder Include="Logica Stock\" />
+    <Folder Include="Logica Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
