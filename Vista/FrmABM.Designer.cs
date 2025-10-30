@@ -67,6 +67,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -359,7 +365,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(580, 86);
+            this.button1.Location = new System.Drawing.Point(692, 79);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 43);
             this.button1.TabIndex = 36;
@@ -368,7 +374,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(580, 171);
+            this.button2.Location = new System.Drawing.Point(692, 171);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 41);
             this.button2.TabIndex = 37;
@@ -377,18 +383,72 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(580, 236);
+            this.button3.Location = new System.Drawing.Point(692, 236);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 44);
             this.button3.TabIndex = 38;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(477, 55);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(100, 22);
+            this.textBox19.TabIndex = 39;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(477, 137);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(100, 22);
+            this.textBox20.TabIndex = 40;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(477, 236);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(100, 22);
+            this.textBox21.TabIndex = 41;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(474, 32);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(113, 16);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Segundo telefono";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(474, 106);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(90, 16);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "Segunda mail";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(474, 196);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(120, 16);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Segunda direccion";
+            // 
             // FrmABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 623);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.textBox19);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -476,5 +536,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }
