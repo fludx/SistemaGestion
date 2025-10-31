@@ -47,6 +47,7 @@
     <Compile Include="Conecction\Conexion_stock.cs" />
     <Compile Include="Conecction\ConnectionBD.cs" />
     <Compile Include="Conecction\Ejeconsultas_Stock.cs" />
+    <Compile Include="DTOs Bitacora\BitacoraDTO.cs" />
     <Compile Include="DTOs Clientes\ClienteDTO.cs" />
     <Compile Include="DTOs Clientes\ClienteEliminarDTO.cs" />
     <Compile Include="DTOs Clientes\ClienteListadoDTO.cs" />
@@ -165,8 +166,6 @@
       <Name>Sesion</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs Bitacora\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
