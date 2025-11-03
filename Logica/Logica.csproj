@@ -65,6 +65,7 @@
     <Compile Include="Logica gestion\L_Restriccion.cs" />
     <Compile Include="Logica gestion\L_Traer_Genero.cs" />
     <Compile Include="Logica gestion\L_VerificarCodigo2FA.cs" />
+    <Compile Include="Logica Producto\L_CrearProducto.cs" />
     <Compile Include="PreguntaVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logica gestion\L_ResponderPreguntas.cs" />
@@ -90,7 +91,6 @@
     <Folder Include="Logica Bitacora\" />
     <Folder Include="Logica Clientes\" />
     <Folder Include="Logica OrdenCompra\" />
-    <Folder Include="Logica Producto\" />
     <Folder Include="Logica Provee\" />
     <Folder Include="Logica Reportes\" />
     <Folder Include="Logica Scrap\" />

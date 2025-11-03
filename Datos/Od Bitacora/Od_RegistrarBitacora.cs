@@ -18,7 +18,6 @@ namespace Datos.Od_Stock
             {
                 string nombreSP = "sp_RegistrarBitacora";
 
-                // Lista de parámetros
                 List<SqlParameter> parametros = new List<SqlParameter>
                 {
                     new SqlParameter("@id_usuario", SqlDbType.Int) { Value = bitacora.IdUsuario },
@@ -30,10 +29,8 @@ namespace Datos.Od_Stock
 
                 SqlParameter[] sqlParam = parametros.ToArray();
 
-                // Ejecutar el procedimiento almacenado
                 DataTable dt = EjecConsultas(nombreSP, sqlParam);
 
-                // Si devuelve filas, la operación fue exitosa
                 return dt.Rows.Count > 0;
             }
             catch (Exception ex)
