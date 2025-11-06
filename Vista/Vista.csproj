@@ -82,6 +82,12 @@
     <Compile Include="FrmABM.Designer.cs">
       <DependentUpon>FrmABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmABMPRodu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMPRodu.Designer.cs">
+      <DependentUpon>FrmABMPRodu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCambiarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABM.resx">
       <DependentUpon>FrmABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMPRodu.resx">
+      <DependentUpon>FrmABMPRodu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarContra.resx">
       <DependentUpon>frmCambiarContra.cs</DependentUpon>

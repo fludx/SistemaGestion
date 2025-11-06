@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessResult.cs" />
+    <Compile Include="Logica Clientes\LogicClientes.cs" />
     <Compile Include="Logica gestion\L_BuscarUsuario.cs" />
     <Compile Include="Logica gestion\L_CrearCodigo2FA.cs" />
     <Compile Include="Logica gestion\L_ListarPersonas.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Logica gestion\L_VerificarCodigo2FA.cs" />
     <Compile Include="Logica Producto\LogicProduct.cs" />
     <Compile Include="Logica Provee\LogicProvee.cs" />
+    <Compile Include="Logica Stock\LogicStock.cs" />
     <Compile Include="Logica Ventas\LogicVentas.cs" />
     <Compile Include="PreguntaVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,11 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logica Bitacora\" />
-    <Folder Include="Logica Clientes\" />
     <Folder Include="Logica OrdenCompra\" />
     <Folder Include="Logica Reportes\" />
     <Folder Include="Logica Scrap\" />
-    <Folder Include="Logica Stock\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
