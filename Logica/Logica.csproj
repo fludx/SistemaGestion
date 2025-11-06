@@ -68,6 +68,7 @@
     <Compile Include="Logica gestion\L_VerificarCodigo2FA.cs" />
     <Compile Include="Logica Producto\LogicProduct.cs" />
     <Compile Include="Logica Provee\LogicProvee.cs" />
+    <Compile Include="Logica Ventas\LogicVentas.cs" />
     <Compile Include="PreguntaVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logica gestion\L_ResponderPreguntas.cs" />
@@ -96,7 +97,6 @@
     <Folder Include="Logica Reportes\" />
     <Folder Include="Logica Scrap\" />
     <Folder Include="Logica Stock\" />
-    <Folder Include="Logica Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

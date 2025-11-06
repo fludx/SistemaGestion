@@ -128,20 +128,20 @@ namespace Negocio
             }
         }
 
-        //public BusinessResult<List<ProductoListadoDTO>> ProductosDeProveedor(int idProveedor)
-        //{
-        //    var res = new BusinessResult<List<ProductoListadoDTO>>();
-        //    try
-        //    {
-        //        res.Data = odProdDeProv.ConsultarProductosDeProveedor(idProveedor);
-        //        return res;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        res.AddError("Error consultando productos del proveedor: " + ex.Message);
-        //        return res;
-        //    }
-        //}
+        public BusinessResult<List<ProductoProveedorDTO>> ProductosDeProveedor(int idProveedor)
+        {
+            var res = new BusinessResult<List<ProductoProveedorDTO>>();
+            try
+            {
+                res.Data = odProdDeProv.ConsultarProductosDeProveedor(idProveedor);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.AddError("Error consultando productos del proveedor: " + ex.Message);
+                return res;
+            }
+        }
 
         public BusinessResult<List<ProveedorDeProductoDTO>> ProveedoresDeProducto(int idProducto)
         {
