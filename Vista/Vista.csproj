@@ -202,7 +202,6 @@
     <Compile Include="MDIStock.Designer.cs">
       <DependentUpon>MDIStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="MostrarToolTip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidadorTextBox.cs" />
@@ -238,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMensajes.resx">
       <DependentUpon>frmMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPoliticasSeguridad.resx">
       <DependentUpon>frmPoliticasSeguridad.cs</DependentUpon>
