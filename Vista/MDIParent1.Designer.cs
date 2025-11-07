@@ -54,6 +54,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblFecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.verElStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +70,8 @@
             this.PersonasToolStripMenuItem,
             this.ConfiguracionToolStripMenuItem,
             this.ReportesToolStripMenuItem,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.verElStockToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1355, 52);
@@ -264,7 +266,7 @@
             this.MensajesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MensajesToolStripMenuItem.Name = "MensajesToolStripMenuItem";
             this.MensajesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.MensajesToolStripMenuItem.Size = new System.Drawing.Size(152, 48);
+            this.MensajesToolStripMenuItem.Size = new System.Drawing.Size(156, 48);
             this.MensajesToolStripMenuItem.Text = "MENSAJES";
             this.MensajesToolStripMenuItem.Click += new System.EventHandler(this.MensajesToolStripMenuItem_Click);
             // 
@@ -311,6 +313,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // verElStockToolStripMenuItem
+            // 
+            this.verElStockToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verElStockToolStripMenuItem.Name = "verElStockToolStripMenuItem";
+            this.verElStockToolStripMenuItem.Size = new System.Drawing.Size(123, 48);
+            this.verElStockToolStripMenuItem.Text = "Ver stock";
             // 
             // MDIParent1
             // 
@@ -367,6 +376,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem CerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ModificarContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verElStockToolStripMenuItem;
     }
 }
 
