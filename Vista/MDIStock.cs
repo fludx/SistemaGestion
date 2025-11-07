@@ -103,15 +103,5 @@ namespace Vista
                 childForm.Close();
             }
         }
-
-        private void buscarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

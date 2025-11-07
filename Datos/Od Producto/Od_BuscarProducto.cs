@@ -12,7 +12,7 @@ namespace Datos.Od_Stock
 {
     public class Od_BuscarProducto : Ejeconsultas_Stock
     {
-        public List<ProductoBuscarDTO> BuscarProducto(string codigo = null, string nombre = null, int? idProducto = null)
+        public List<ProductoBuscarDTO> BuscarProducto(string? codigo = null, string? nombre = null, int? idProducto = null)
         {
             try
             {
@@ -20,11 +20,11 @@ namespace Datos.Od_Stock
 
                 // Parámetros del procedimiento almacenado
                 List<SqlParameter> parametros = new List<SqlParameter>
-               {
-    new SqlParameter("@codigo", SqlDbType.VarChar, 50) { Value = codigo != null ? (object)codigo : DBNull.Value },
-    new SqlParameter("@nombre", SqlDbType.VarChar, 100) { Value = nombre != null ? (object)nombre : DBNull.Value },
-    new SqlParameter("@id_producto", SqlDbType.Int) { Value = idProducto.HasValue ? (object)idProducto.Value : DBNull.Value }
-};
+                {
+                    new SqlParameter("@codigo", SqlDbType.VarChar, 50) { Value = (object)codigo ?? DBNull.Value },
+                    new SqlParameter("@nombre", SqlDbType.VarChar, 100) { Value = (object)nombre ?? DBNull.Value },
+                    new SqlParameter("@id_producto", SqlDbType.Int) { Value = (object)idProducto ?? DBNull.Value }
+                };
 
                 SqlParameter[] sqlParam = parametros.ToArray();
 
