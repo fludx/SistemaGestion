@@ -122,7 +122,7 @@ namespace Vista
 
         private void buscarProveedorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmBuscarPoveerdor ventana = new FrmBuscarPoveerdor();  // Crear instancia del formulario
+            FrmBuscarProveedor ventana = new FrmBuscarProveedor();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();
@@ -130,7 +130,7 @@ namespace Vista
 
         private void buscarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarPoveerdor ventana = new FrmBuscarPoveerdor();  // Crear instancia del formulario
+            FrmBuscarProveedor ventana = new FrmBuscarProveedor();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();

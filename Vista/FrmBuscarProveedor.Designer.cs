@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FrmBuscarPoveerdor
+    partial class FrmBuscarProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -84,7 +84,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 55);
             this.button1.TabIndex = 2;
-            this.button1.Text = " ";
+            this.button1.Text = " Buscar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
@@ -104,14 +104,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(656, 170);
             this.dataGridView1.TabIndex = 2;
             // 
-            // FrmBuscarPoveerdor
+            // FrmBuscarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FrmBuscarPoveerdor";
+            this.Name = "FrmBuscarProveedor";
             this.Text = "FrmBuscarPoveerdor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

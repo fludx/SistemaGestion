@@ -84,7 +84,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 55);
             this.button1.TabIndex = 2;
-            this.button1.Text = " ";
+            this.button1.Text = "Buscar ";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox1

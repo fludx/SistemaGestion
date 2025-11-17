@@ -88,11 +88,11 @@
     <Compile Include="FrmABMPRodu.Designer.cs">
       <DependentUpon>FrmABMPRodu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarPoveerdor.cs">
+    <Compile Include="FrmBuscarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuscarPoveerdor.Designer.cs">
-      <DependentUpon>FrmBuscarPoveerdor.cs</DependentUpon>
+    <Compile Include="FrmBuscarProveedor.Designer.cs">
+      <DependentUpon>FrmBuscarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBusClien.cs">
       <SubType>Form</SubType>
@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="frmCambiarContra.Designer.cs">
       <DependentUpon>frmCambiarContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDevolverProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDevolverProductos.Designer.cs">
+      <DependentUpon>FrmDevolverProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditarUsuario.cs">
       <SubType>Form</SubType>
@@ -136,11 +142,29 @@
     <Compile Include="frmLogs.Designer.cs">
       <DependentUpon>frmLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLote.Designer.cs">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManejarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManejarStock.Designer.cs">
+      <DependentUpon>FrmManejarStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMensajes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMensajes.Designer.cs">
       <DependentUpon>frmMensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMercaderia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMercaderia.Designer.cs">
+      <DependentUpon>FrmMercaderia.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMovStock.cs">
       <SubType>Form</SubType>
@@ -190,6 +214,12 @@
     <Compile Include="FrmPresuProv.Designer.cs">
       <DependentUpon>FrmPresuProv.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProdDev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProdDev.Designer.cs">
+      <DependentUpon>FrmProdDev.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProdProv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +231,12 @@
     </Compile>
     <Compile Include="FrmRem.Designer.cs">
       <DependentUpon>FrmRem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepComp.Designer.cs">
+      <DependentUpon>FrmRepComp.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRepor.cs">
       <SubType>Form</SubType>
@@ -311,8 +347,8 @@
     <EmbeddedResource Include="FrmABMPRodu.resx">
       <DependentUpon>FrmABMPRodu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscarPoveerdor.resx">
-      <DependentUpon>FrmBuscarPoveerdor.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBuscarProveedor.resx">
+      <DependentUpon>FrmBuscarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBusClien.resx">
       <DependentUpon>FrmBusClien.cs</DependentUpon>
@@ -322,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarContra.resx">
       <DependentUpon>frmCambiarContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDevolverProductos.resx">
+      <DependentUpon>FrmDevolverProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
@@ -347,8 +386,17 @@
     <EmbeddedResource Include="frmLogs.resx">
       <DependentUpon>frmLogs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLote.resx">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManejarStock.resx">
+      <DependentUpon>FrmManejarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMensajes.resx">
       <DependentUpon>frmMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMercaderia.resx">
+      <DependentUpon>FrmMercaderia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMovStock.resx">
       <DependentUpon>FrmMovStock.cs</DependentUpon>
@@ -377,6 +425,9 @@
     <EmbeddedResource Include="FrmPresuProv.resx">
       <DependentUpon>FrmPresuProv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProdDev.resx">
+      <DependentUpon>FrmProdDev.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProdProv.resx">
       <DependentUpon>FrmProdProv.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRem.resx">
       <DependentUpon>FrmRem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepComp.resx">
+      <DependentUpon>FrmRepComp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRepor.resx">
       <DependentUpon>FrmRepor.cs</DependentUpon>

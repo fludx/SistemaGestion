@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FrmMercaderia
+    partial class FrmProdDev
     {
         /// <summary>
         /// Required designer variable.
@@ -35,21 +35,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(68, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(607, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(723, 211);
             this.dataGridView1.TabIndex = 0;
             // 
-            // FrmMercaderia
+            // FrmProdDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FrmMercaderia";
-            this.Text = "FrmMercaderia";
+            this.Name = "FrmProdDev";
+            this.Text = "FrmProdDev";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
