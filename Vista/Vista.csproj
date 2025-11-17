@@ -88,6 +88,24 @@
     <Compile Include="FrmABMPRodu.Designer.cs">
       <DependentUpon>FrmABMPRodu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarPoveerdor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPoveerdor.Designer.cs">
+      <DependentUpon>FrmBuscarPoveerdor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBusClien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusClien.Designer.cs">
+      <DependentUpon>FrmBusClien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBusProduc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusProduc.Designer.cs">
+      <DependentUpon>FrmBusProduc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCambiarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +117,18 @@
     </Compile>
     <Compile Include="frmEditarUsuario.Designer.cs">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFactCom.Designer.cs">
+      <DependentUpon>FrmFactCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngMer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngMer.Designer.cs">
+      <DependentUpon>FrmIngMer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogs.cs">
       <SubType>Form</SubType>
@@ -112,17 +142,77 @@
     <Compile Include="frmMensajes.Designer.cs">
       <DependentUpon>frmMensajes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMovStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovStock.Designer.cs">
+      <DependentUpon>FrmMovStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNot.Designer.cs">
+      <DependentUpon>FrmNot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNotPed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotPed.Designer.cs">
+      <DependentUpon>FrmNotPed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrdCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrdCom.Designer.cs">
+      <DependentUpon>FrmOrdCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPed.Designer.cs">
+      <DependentUpon>FrmPed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPedidos.Designer.cs">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPresuClien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresuClien.Designer.cs">
+      <DependentUpon>FrmPresuClien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPresuProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresuProv.Designer.cs">
+      <DependentUpon>FrmPresuProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProdProv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProdProv.Designer.cs">
       <DependentUpon>FrmProdProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRem.Designer.cs">
+      <DependentUpon>FrmRem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepCom.Designer.cs">
+      <DependentUpon>FrmRepor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporVent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporVent.Designer.cs">
+      <DependentUpon>FrmReporVent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmResponderPreguntas.cs">
       <SubType>Form</SubType>
@@ -184,6 +274,12 @@
     <Compile Include="frmResponderRespuesta.Designer.cs">
       <DependentUpon>frmResponderRespuesta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmScarp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScarp.Designer.cs">
+      <DependentUpon>FrmScarp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarioNombre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,11 +311,26 @@
     <EmbeddedResource Include="FrmABMPRodu.resx">
       <DependentUpon>FrmABMPRodu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPoveerdor.resx">
+      <DependentUpon>FrmBuscarPoveerdor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusClien.resx">
+      <DependentUpon>FrmBusClien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusProduc.resx">
+      <DependentUpon>FrmBusProduc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarContra.resx">
       <DependentUpon>frmCambiarContra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFactCom.resx">
+      <DependentUpon>FrmFactCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngMer.resx">
+      <DependentUpon>FrmIngMer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>
@@ -239,11 +350,32 @@
     <EmbeddedResource Include="frmMensajes.resx">
       <DependentUpon>frmMensajes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovStock.resx">
+      <DependentUpon>FrmMovStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNot.resx">
+      <DependentUpon>FrmNot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotPed.resx">
+      <DependentUpon>FrmNotPed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrdCom.resx">
+      <DependentUpon>FrmOrdCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPed.resx">
+      <DependentUpon>FrmPed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPoliticasSeguridad.resx">
       <DependentUpon>frmPoliticasSeguridad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPreguntasDeSeguridad.resx">
       <DependentUpon>frmPreguntasDeSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresuClien.resx">
+      <DependentUpon>FrmPresuClien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresuProv.resx">
+      <DependentUpon>FrmPresuProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProdProv.resx">
       <DependentUpon>FrmProdProv.cs</DependentUpon>
@@ -254,11 +386,23 @@
     <EmbeddedResource Include="frmRegistrarPersonas.resx">
       <DependentUpon>frmRegistrarPersonas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRem.resx">
+      <DependentUpon>FrmRem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepor.resx">
+      <DependentUpon>FrmRepor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporVent.resx">
+      <DependentUpon>FrmReporVent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmResponderPreguntas.resx">
       <DependentUpon>frmResponderPreguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmResponderRespuesta.resx">
       <DependentUpon>frmResponderRespuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScarp.resx">
+      <DependentUpon>FrmScarp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarioNombre.resx">
       <DependentUpon>frmUsuarioNombre.cs</DependentUpon>

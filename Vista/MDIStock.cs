@@ -103,5 +103,91 @@ namespace Vista
                 childForm.Close();
             }
         }
+
+        private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBusClien ventana = new FrmBusClien();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();                              // Ocultar el formulario actual (opcional)
+        }
+
+        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmABM ventana = new FrmABM();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void buscarProveedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmBuscarPoveerdor ventana = new FrmBuscarPoveerdor();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void buscarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarPoveerdor ventana = new FrmBuscarPoveerdor();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmABM ventana = new FrmABM();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void buscarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBusProduc ventana = new FrmBusProduc();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPedidos ventana = new FrmPedidos();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void verRemitosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRem ventana = new FrmRem();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void facturasDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFactCom ventana = new FrmFactCom();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void pagosConCreditoYDebitoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNot ventana = new FrmNot();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+
