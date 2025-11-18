@@ -187,6 +187,152 @@ namespace Vista
         private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+            FrmComp ventana = new FrmComp();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void prodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmDevolverProductos ventana = new FrmDevolverProductos();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPresuProv ventana = new FrmPresuProv();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrdCom ventana = new FrmOrdCom();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void agregarClienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmABM ventana = new FrmABM();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void buscarClienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmBusClien ventana = new FrmBusClien();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void emisionregistroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pagosConCreditoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNot ventana = new FrmNot();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void pagosConDebitoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNot ventana = new FrmNot();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPresuClien ventana = new FrmPresuClien();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void notasDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNotPed ventana = new FrmNotPed();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void devolverProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDevolverProductos ventana = new FrmDevolverProductos();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManejarStock ventana = new FrmManejarStock();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void actualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManejarStock ventana = new FrmManejarStock();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void enScrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmScarp ventana = new FrmScarp();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void pendienteDeEntregaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManejarStock ventana = new FrmManejarStock();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void manejoDeScrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmScarp ventana = new FrmScarp();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void lotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLote ventana = new FrmLote();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
+        }
+
+        private void mercaderiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMercaderia ventana = new FrmMercaderia();  // Crear instancia del formulario
+            ventana.Show();                           // Mostrar formulario
+
+            this.Hide();
         }
     }
     }
