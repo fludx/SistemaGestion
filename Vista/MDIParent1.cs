@@ -362,7 +362,17 @@ namespace Vista
             frmCambiar.Show();
         }
 
+        private void verElStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Creamos el nuevo MDI
+            MDIStock nuevoMDI = new MDIStock();
 
+            // Mostramos el nuevo MDI antes de cerrar el actual
+            nuevoMDI.Show();
+
+            // Cerramos el actual
+            this.Hide();     // oculta sin destruir  
+        }
     }
 }
 

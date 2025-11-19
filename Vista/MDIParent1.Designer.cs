@@ -244,6 +244,7 @@
             this.verElStockToolStripMenuItem.Name = "verElStockToolStripMenuItem";
             this.verElStockToolStripMenuItem.Size = new System.Drawing.Size(102, 48);
             this.verElStockToolStripMenuItem.Text = "Ver stock";
+            this.verElStockToolStripMenuItem.Click += new System.EventHandler(this.verElStockToolStripMenuItem_Click);
             // 
             // statusStrip
             // 

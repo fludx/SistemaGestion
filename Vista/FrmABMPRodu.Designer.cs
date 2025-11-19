@@ -31,9 +31,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.TXTStockMinimo = new System.Windows.Forms.TextBox();
+            this.TXTProximovenc = new System.Windows.Forms.TextBox();
+            this.TXTDescripcion = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -49,17 +49,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXTStockMaximo = new System.Windows.Forms.TextBox();
+            this.TXTStockIdeal = new System.Windows.Forms.TextBox();
+            this.TXTStockActual = new System.Windows.Forms.TextBox();
+            this.TXTPrecioVenta = new System.Windows.Forms.TextBox();
+            this.TXTPrecioCompra = new System.Windows.Forms.TextBox();
+            this.TXTLote = new System.Windows.Forms.TextBox();
+            this.TXTVencimiento = new System.Windows.Forms.TextBox();
+            this.TXTMarca = new System.Windows.Forms.TextBox();
+            this.TXTNombre = new System.Windows.Forms.TextBox();
+            this.TXTCat = new System.Windows.Forms.TextBox();
+            this.TXTCod = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -95,29 +95,29 @@
             this.label19.TabIndex = 89;
             this.label19.Text = "Descripcion";
             // 
-            // textBox21
+            // TXTStockMinimo
             // 
-            this.textBox21.Location = new System.Drawing.Point(403, 196);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(76, 20);
-            this.textBox21.TabIndex = 88;
+            this.TXTStockMinimo.Location = new System.Drawing.Point(403, 196);
+            this.TXTStockMinimo.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockMinimo.Name = "TXTStockMinimo";
+            this.TXTStockMinimo.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockMinimo.TabIndex = 88;
             // 
-            // textBox20
+            // TXTProximovenc
             // 
-            this.textBox20.Location = new System.Drawing.Point(403, 115);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(76, 20);
-            this.textBox20.TabIndex = 87;
+            this.TXTProximovenc.Location = new System.Drawing.Point(403, 115);
+            this.TXTProximovenc.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTProximovenc.Name = "TXTProximovenc";
+            this.TXTProximovenc.Size = new System.Drawing.Size(76, 20);
+            this.TXTProximovenc.TabIndex = 87;
             // 
-            // textBox19
+            // TXTDescripcion
             // 
-            this.textBox19.Location = new System.Drawing.Point(403, 49);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(76, 20);
-            this.textBox19.TabIndex = 86;
+            this.TXTDescripcion.Location = new System.Drawing.Point(403, 49);
+            this.TXTDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTDescripcion.Name = "TXTDescripcion";
+            this.TXTDescripcion.Size = new System.Drawing.Size(76, 20);
+            this.TXTDescripcion.TabIndex = 86;
             // 
             // button1
             // 
@@ -267,93 +267,93 @@
             this.textBox12.Size = new System.Drawing.Size(76, 20);
             this.textBox12.TabIndex = 58;
             // 
-            // textBox11
+            // TXTStockMaximo
             // 
-            this.textBox11.Location = new System.Drawing.Point(181, 261);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 20);
-            this.textBox11.TabIndex = 57;
+            this.TXTStockMaximo.Location = new System.Drawing.Point(181, 261);
+            this.TXTStockMaximo.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockMaximo.Name = "TXTStockMaximo";
+            this.TXTStockMaximo.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockMaximo.TabIndex = 57;
             // 
-            // textBox10
+            // TXTStockIdeal
             // 
-            this.textBox10.Location = new System.Drawing.Point(66, 261);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(76, 20);
-            this.textBox10.TabIndex = 56;
+            this.TXTStockIdeal.Location = new System.Drawing.Point(66, 261);
+            this.TXTStockIdeal.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockIdeal.Name = "TXTStockIdeal";
+            this.TXTStockIdeal.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockIdeal.TabIndex = 56;
             // 
-            // textBox9
+            // TXTStockActual
             // 
-            this.textBox9.Location = new System.Drawing.Point(293, 196);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(76, 20);
-            this.textBox9.TabIndex = 55;
+            this.TXTStockActual.Location = new System.Drawing.Point(293, 196);
+            this.TXTStockActual.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockActual.Name = "TXTStockActual";
+            this.TXTStockActual.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockActual.TabIndex = 55;
             // 
-            // textBox8
+            // TXTPrecioVenta
             // 
-            this.textBox8.Location = new System.Drawing.Point(181, 196);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(76, 20);
-            this.textBox8.TabIndex = 54;
+            this.TXTPrecioVenta.Location = new System.Drawing.Point(181, 196);
+            this.TXTPrecioVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTPrecioVenta.Name = "TXTPrecioVenta";
+            this.TXTPrecioVenta.Size = new System.Drawing.Size(76, 20);
+            this.TXTPrecioVenta.TabIndex = 54;
             // 
-            // textBox7
+            // TXTPrecioCompra
             // 
-            this.textBox7.Location = new System.Drawing.Point(66, 196);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(76, 20);
-            this.textBox7.TabIndex = 53;
+            this.TXTPrecioCompra.Location = new System.Drawing.Point(66, 196);
+            this.TXTPrecioCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTPrecioCompra.Name = "TXTPrecioCompra";
+            this.TXTPrecioCompra.Size = new System.Drawing.Size(76, 20);
+            this.TXTPrecioCompra.TabIndex = 53;
             // 
-            // textBox6
+            // TXTLote
             // 
-            this.textBox6.Location = new System.Drawing.Point(293, 115);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(76, 20);
-            this.textBox6.TabIndex = 52;
+            this.TXTLote.Location = new System.Drawing.Point(293, 115);
+            this.TXTLote.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTLote.Name = "TXTLote";
+            this.TXTLote.Size = new System.Drawing.Size(76, 20);
+            this.TXTLote.TabIndex = 52;
             // 
-            // textBox5
+            // TXTVencimiento
             // 
-            this.textBox5.Location = new System.Drawing.Point(181, 115);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 20);
-            this.textBox5.TabIndex = 51;
+            this.TXTVencimiento.Location = new System.Drawing.Point(181, 115);
+            this.TXTVencimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTVencimiento.Name = "TXTVencimiento";
+            this.TXTVencimiento.Size = new System.Drawing.Size(76, 20);
+            this.TXTVencimiento.TabIndex = 51;
             // 
-            // textBox4
+            // TXTMarca
             // 
-            this.textBox4.Location = new System.Drawing.Point(66, 115);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 20);
-            this.textBox4.TabIndex = 50;
+            this.TXTMarca.Location = new System.Drawing.Point(66, 115);
+            this.TXTMarca.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTMarca.Name = "TXTMarca";
+            this.TXTMarca.Size = new System.Drawing.Size(76, 20);
+            this.TXTMarca.TabIndex = 50;
             // 
-            // textBox3
+            // TXTNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(293, 49);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 20);
-            this.textBox3.TabIndex = 49;
+            this.TXTNombre.Location = new System.Drawing.Point(293, 49);
+            this.TXTNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTNombre.Name = "TXTNombre";
+            this.TXTNombre.Size = new System.Drawing.Size(76, 20);
+            this.TXTNombre.TabIndex = 49;
             // 
-            // textBox2
+            // TXTCat
             // 
-            this.textBox2.Location = new System.Drawing.Point(181, 49);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 48;
+            this.TXTCat.Location = new System.Drawing.Point(181, 49);
+            this.TXTCat.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTCat.Name = "TXTCat";
+            this.TXTCat.Size = new System.Drawing.Size(76, 20);
+            this.TXTCat.TabIndex = 48;
             // 
-            // textBox1
+            // TXTCod
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 49);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 47;
+            this.TXTCod.Location = new System.Drawing.Point(66, 49);
+            this.TXTCod.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTCod.Name = "TXTCod";
+            this.TXTCod.Size = new System.Drawing.Size(76, 20);
+            this.TXTCod.TabIndex = 47;
             // 
             // comboBox1
             // 
@@ -395,9 +395,9 @@
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.TXTStockMinimo);
+            this.Controls.Add(this.TXTProximovenc);
+            this.Controls.Add(this.TXTDescripcion);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -413,17 +413,17 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TXTStockMaximo);
+            this.Controls.Add(this.TXTStockIdeal);
+            this.Controls.Add(this.TXTStockActual);
+            this.Controls.Add(this.TXTPrecioVenta);
+            this.Controls.Add(this.TXTPrecioCompra);
+            this.Controls.Add(this.TXTLote);
+            this.Controls.Add(this.TXTVencimiento);
+            this.Controls.Add(this.TXTMarca);
+            this.Controls.Add(this.TXTNombre);
+            this.Controls.Add(this.TXTCat);
+            this.Controls.Add(this.TXTCod);
             this.Name = "FrmABMPRodu";
             this.Text = "FrmABMPRodu";
             this.ResumeLayout(false);
@@ -435,9 +435,9 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox TXTStockMinimo;
+        private System.Windows.Forms.TextBox TXTProximovenc;
+        private System.Windows.Forms.TextBox TXTDescripcion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -453,17 +453,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTStockMaximo;
+        private System.Windows.Forms.TextBox TXTStockIdeal;
+        private System.Windows.Forms.TextBox TXTStockActual;
+        private System.Windows.Forms.TextBox TXTPrecioVenta;
+        private System.Windows.Forms.TextBox TXTPrecioCompra;
+        private System.Windows.Forms.TextBox TXTLote;
+        private System.Windows.Forms.TextBox TXTVencimiento;
+        private System.Windows.Forms.TextBox TXTMarca;
+        private System.Windows.Forms.TextBox TXTNombre;
+        private System.Windows.Forms.TextBox TXTCat;
+        private System.Windows.Forms.TextBox TXTCod;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

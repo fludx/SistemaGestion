@@ -501,6 +501,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{8A231EF4-D114-4F57-8E56-DE735B129E92}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{d2f10dc3-0c58-49d9-b809-119dff032db2}</Project>
       <Name>Logica</Name>

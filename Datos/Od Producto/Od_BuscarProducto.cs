@@ -12,7 +12,7 @@ namespace Datos.Od_Stock
 {
     public class Od_BuscarProducto : Ejeconsultas_Stock
     {
-        public List<ProductoBuscarDTO> BuscarProducto(string? codigo = null, string? nombre = null, int? idProducto = null)
+        public List<ProductoBuscarDTO> BuscarProducto(string codigo = null, string nombre = null, int? idProducto = null)
         {
             try
             {

@@ -109,7 +109,7 @@ namespace Vista
             FrmBusClien ventana = new FrmBusClien();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
-            this.Hide();                              // Ocultar el formulario actual (opcional)
+            this.Hide();                              // Ocultar el formulario actual 
         }
 
         private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -333,6 +333,11 @@ namespace Vista
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();
+        }
+
+        private void MDIStock_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }
