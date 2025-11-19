@@ -45,5 +45,11 @@ namespace Vista
                 MessageBox.Show("Error inesperado: " + ex.Message);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            (dgvClientes.DataSource as DataTable).DefaultView.RowFilter =
+        $"NombreProducto LIKE '%{textBox1.Text}%'";
+        }
     }
 }
