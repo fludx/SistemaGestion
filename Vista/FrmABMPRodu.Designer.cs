@@ -68,327 +68,353 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(401, 163);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(535, 201);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
+            this.label21.Size = new System.Drawing.Size(117, 20);
             this.label21.TabIndex = 91;
             this.label21.Text = "Stock minimo";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(408, 90);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(544, 111);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(94, 13);
+            this.label20.Size = new System.Drawing.Size(162, 20);
             this.label20.TabIndex = 90;
             this.label20.Text = "Proximos a vencer";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(401, 30);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(535, 37);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.Size = new System.Drawing.Size(108, 20);
             this.label19.TabIndex = 89;
             this.label19.Text = "Descripcion";
             // 
             // TXTStockMinimo
             // 
-            this.TXTStockMinimo.Location = new System.Drawing.Point(403, 196);
-            this.TXTStockMinimo.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockMinimo.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTStockMinimo.Location = new System.Drawing.Point(537, 241);
+            this.TXTStockMinimo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTStockMinimo.Name = "TXTStockMinimo";
-            this.TXTStockMinimo.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockMinimo.Size = new System.Drawing.Size(100, 27);
             this.TXTStockMinimo.TabIndex = 88;
             // 
             // TXTProximovenc
             // 
-            this.TXTProximovenc.Location = new System.Drawing.Point(403, 115);
-            this.TXTProximovenc.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTProximovenc.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTProximovenc.Location = new System.Drawing.Point(537, 142);
+            this.TXTProximovenc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTProximovenc.Name = "TXTProximovenc";
-            this.TXTProximovenc.Size = new System.Drawing.Size(76, 20);
+            this.TXTProximovenc.Size = new System.Drawing.Size(100, 27);
             this.TXTProximovenc.TabIndex = 87;
             // 
             // TXTDescripcion
             // 
-            this.TXTDescripcion.Location = new System.Drawing.Point(403, 49);
-            this.TXTDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTDescripcion.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTDescripcion.Location = new System.Drawing.Point(537, 60);
+            this.TXTDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTDescripcion.Name = "TXTDescripcion";
-            this.TXTDescripcion.Size = new System.Drawing.Size(76, 20);
+            this.TXTDescripcion.Size = new System.Drawing.Size(100, 27);
             this.TXTDescripcion.TabIndex = 86;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(564, 68);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(752, 84);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 35);
+            this.button1.Size = new System.Drawing.Size(119, 65);
             this.button1.TabIndex = 83;
             this.button1.Text = "Agregar producto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(400, 232);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(533, 286);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 13);
+            this.label13.Size = new System.Drawing.Size(99, 20);
             this.label13.TabIndex = 77;
             this.label13.Text = "Tipo Stock";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(310, 232);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(413, 286);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(90, 20);
             this.label12.TabIndex = 76;
             this.label12.Text = "Stock Max";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(199, 232);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(265, 286);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.Size = new System.Drawing.Size(117, 20);
             this.label11.TabIndex = 75;
             this.label11.Text = "Stock maximo";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(77, 232);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(103, 286);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.Size = new System.Drawing.Size(108, 20);
             this.label10.TabIndex = 74;
             this.label10.Text = "Stock ideal";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(310, 163);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(413, 201);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.Size = new System.Drawing.Size(117, 20);
             this.label9.TabIndex = 73;
             this.label9.Text = "Stock Actual";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(204, 163);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(272, 201);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
+            this.label8.Size = new System.Drawing.Size(117, 20);
             this.label8.TabIndex = 72;
             this.label8.Text = "Precio Venta";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 167);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(103, 206);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(126, 20);
             this.label7.TabIndex = 71;
             this.label7.Text = "Precio Compra";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(310, 90);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(413, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 70;
             this.label6.Text = "Lote";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(194, 90);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(259, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.Size = new System.Drawing.Size(108, 20);
             this.label5.TabIndex = 69;
             this.label5.Text = "Vencimiento";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 90);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(103, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 68;
             this.label4.Text = "Marca";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(310, 30);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(413, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 67;
             this.label3.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 66;
             this.label2.Text = "Categoria";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(127, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 65;
             this.label1.Text = "Codigo";
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(293, 261);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox12.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(391, 321);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(76, 20);
+            this.textBox12.Size = new System.Drawing.Size(100, 27);
             this.textBox12.TabIndex = 58;
             // 
             // TXTStockMaximo
             // 
-            this.TXTStockMaximo.Location = new System.Drawing.Point(181, 261);
-            this.TXTStockMaximo.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockMaximo.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTStockMaximo.Location = new System.Drawing.Point(241, 321);
+            this.TXTStockMaximo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTStockMaximo.Name = "TXTStockMaximo";
-            this.TXTStockMaximo.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockMaximo.Size = new System.Drawing.Size(100, 27);
             this.TXTStockMaximo.TabIndex = 57;
             // 
             // TXTStockIdeal
             // 
-            this.TXTStockIdeal.Location = new System.Drawing.Point(66, 261);
-            this.TXTStockIdeal.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockIdeal.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTStockIdeal.Location = new System.Drawing.Point(88, 321);
+            this.TXTStockIdeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTStockIdeal.Name = "TXTStockIdeal";
-            this.TXTStockIdeal.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockIdeal.Size = new System.Drawing.Size(100, 27);
             this.TXTStockIdeal.TabIndex = 56;
             // 
             // TXTStockActual
             // 
-            this.TXTStockActual.Location = new System.Drawing.Point(293, 196);
-            this.TXTStockActual.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTStockActual.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTStockActual.Location = new System.Drawing.Point(391, 241);
+            this.TXTStockActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTStockActual.Name = "TXTStockActual";
-            this.TXTStockActual.Size = new System.Drawing.Size(76, 20);
+            this.TXTStockActual.Size = new System.Drawing.Size(100, 27);
             this.TXTStockActual.TabIndex = 55;
             // 
             // TXTPrecioVenta
             // 
-            this.TXTPrecioVenta.Location = new System.Drawing.Point(181, 196);
-            this.TXTPrecioVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTPrecioVenta.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTPrecioVenta.Location = new System.Drawing.Point(241, 241);
+            this.TXTPrecioVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTPrecioVenta.Name = "TXTPrecioVenta";
-            this.TXTPrecioVenta.Size = new System.Drawing.Size(76, 20);
+            this.TXTPrecioVenta.Size = new System.Drawing.Size(100, 27);
             this.TXTPrecioVenta.TabIndex = 54;
             // 
             // TXTPrecioCompra
             // 
-            this.TXTPrecioCompra.Location = new System.Drawing.Point(66, 196);
-            this.TXTPrecioCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTPrecioCompra.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTPrecioCompra.Location = new System.Drawing.Point(88, 241);
+            this.TXTPrecioCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTPrecioCompra.Name = "TXTPrecioCompra";
-            this.TXTPrecioCompra.Size = new System.Drawing.Size(76, 20);
+            this.TXTPrecioCompra.Size = new System.Drawing.Size(100, 27);
             this.TXTPrecioCompra.TabIndex = 53;
             // 
             // TXTLote
             // 
-            this.TXTLote.Location = new System.Drawing.Point(293, 115);
-            this.TXTLote.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTLote.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTLote.Location = new System.Drawing.Point(391, 142);
+            this.TXTLote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTLote.Name = "TXTLote";
-            this.TXTLote.Size = new System.Drawing.Size(76, 20);
+            this.TXTLote.Size = new System.Drawing.Size(100, 27);
             this.TXTLote.TabIndex = 52;
             // 
             // TXTVencimiento
             // 
-            this.TXTVencimiento.Location = new System.Drawing.Point(181, 115);
-            this.TXTVencimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTVencimiento.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTVencimiento.Location = new System.Drawing.Point(241, 142);
+            this.TXTVencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTVencimiento.Name = "TXTVencimiento";
-            this.TXTVencimiento.Size = new System.Drawing.Size(76, 20);
+            this.TXTVencimiento.Size = new System.Drawing.Size(100, 27);
             this.TXTVencimiento.TabIndex = 51;
             // 
             // TXTMarca
             // 
-            this.TXTMarca.Location = new System.Drawing.Point(66, 115);
-            this.TXTMarca.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTMarca.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTMarca.Location = new System.Drawing.Point(88, 142);
+            this.TXTMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTMarca.Name = "TXTMarca";
-            this.TXTMarca.Size = new System.Drawing.Size(76, 20);
+            this.TXTMarca.Size = new System.Drawing.Size(100, 27);
             this.TXTMarca.TabIndex = 50;
             // 
             // TXTNombre
             // 
-            this.TXTNombre.Location = new System.Drawing.Point(293, 49);
-            this.TXTNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTNombre.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTNombre.Location = new System.Drawing.Point(391, 60);
+            this.TXTNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTNombre.Name = "TXTNombre";
-            this.TXTNombre.Size = new System.Drawing.Size(76, 20);
+            this.TXTNombre.Size = new System.Drawing.Size(100, 27);
             this.TXTNombre.TabIndex = 49;
             // 
             // TXTCat
             // 
-            this.TXTCat.Location = new System.Drawing.Point(181, 49);
-            this.TXTCat.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTCat.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTCat.Location = new System.Drawing.Point(241, 60);
+            this.TXTCat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTCat.Name = "TXTCat";
-            this.TXTCat.Size = new System.Drawing.Size(76, 20);
+            this.TXTCat.Size = new System.Drawing.Size(100, 27);
             this.TXTCat.TabIndex = 48;
             // 
             // TXTCod
             // 
-            this.TXTCod.Location = new System.Drawing.Point(66, 49);
-            this.TXTCod.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTCod.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTCod.Location = new System.Drawing.Point(88, 60);
+            this.TXTCod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTCod.Name = "TXTCod";
-            this.TXTCod.Size = new System.Drawing.Size(76, 20);
+            this.TXTCod.Size = new System.Drawing.Size(100, 27);
             this.TXTCod.TabIndex = 47;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(404, 260);
+            this.comboBox1.Location = new System.Drawing.Point(539, 320);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 21);
+            this.comboBox1.Size = new System.Drawing.Size(129, 28);
             this.comboBox1.TabIndex = 94;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(564, 145);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.BackColor = System.Drawing.Color.Blue;
+            this.button2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(752, 178);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 35);
+            this.button2.Size = new System.Drawing.Size(119, 43);
             this.button2.TabIndex = 95;
             this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(564, 221);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.BackColor = System.Drawing.Color.Blue;
+            this.button3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(752, 272);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 35);
+            this.button3.Size = new System.Drawing.Size(119, 43);
             this.button3.TabIndex = 96;
             this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // FrmABMPRodu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
@@ -424,6 +450,7 @@
             this.Controls.Add(this.TXTNombre);
             this.Controls.Add(this.TXTCat);
             this.Controls.Add(this.TXTCod);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmABMPRodu";
             this.Text = "FrmABMPRodu";
             this.ResumeLayout(false);

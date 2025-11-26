@@ -51,5 +51,10 @@ namespace Vista
             (dgvClientes.DataSource as DataTable).DefaultView.RowFilter =
         $"NombreProducto LIKE '%{textBox1.Text}%'";
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

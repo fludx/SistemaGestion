@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FrmFactCom : Form
+    public partial class FrmAgregAdmin : Form
     {
-        public FrmFactCom()
+        public FrmAgregAdmin()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
