@@ -4,9 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Od_Stock
 {
@@ -18,40 +15,33 @@ namespace Datos.Od_Stock
             {
                 string nombreSP = "sp_ModificarProducto";
 
-                // Lista de parámetros
+                // Eliminar la línea que hace referencia a "PuntoReposicion" ya que "ProductoModificarDTO" no tiene esa propiedad.
+                // Código original:
+                // new SqlParameter("@punto_reposicion", SqlDbType.Int) { Value = producto.PuntoReposicion },
+
+                // Código corregido: simplemente elimina esa línea del array de parámetros.
                 List<SqlParameter> parametros = new List<SqlParameter>
                 {
                     new SqlParameter("@id_producto", SqlDbType.Int) { Value = producto.IdProducto },
-                    new SqlParameter("@codigo", SqlDbType.VarChar, 50) { Value = producto.Codigo },
-                    new SqlParameter("@nombre", SqlDbType.VarChar, 100) { Value = producto.Nombre },
-                    new SqlParameter("@marca", SqlDbType.VarChar, 100) { Value = (object)producto.Marca ?? DBNull.Value },
-                    new SqlParameter("@descripcion", SqlDbType.VarChar, 255) { Value = (object)producto.Descripcion ?? DBNull.Value },
-                    new SqlParameter("@precio_compra", SqlDbType.Decimal)
-                    {
-                        Precision = 18,
-                        Scale = 2,
-                        Value = producto.PrecioCompra
-                    },
-                    new SqlParameter("@precio_venta", SqlDbType.Decimal)
-                    {
-                        Precision = 18,
-                        Scale = 2,
-                        Value = producto.PrecioVenta
-                    },
+                    new SqlParameter("@codigo", SqlDbType.NVarChar, 50) { Value = (object)producto.Codigo ?? DBNull.Value },
+                    new SqlParameter("@id_categoria", SqlDbType.Int) { Value = producto.IdCategoria },
+                    new SqlParameter("@nombre", SqlDbType.NVarChar, 150) { Value = (object)producto.Nombre ?? DBNull.Value },
+                    new SqlParameter("@descripcion", SqlDbType.NVarChar, 500) { Value = (object)producto.Descripcion ?? DBNull.Value },
+                    new SqlParameter("@marca", SqlDbType.NVarChar, 100) { Value = (object)producto.Marca ?? DBNull.Value },
+                    new SqlParameter("@precio_compra", SqlDbType.Decimal) { Precision = 18, Scale = 2, Value = producto.PrecioCompra },
+                    new SqlParameter("@precio_venta", SqlDbType.Decimal) { Precision = 18, Scale = 2, Value = producto.PrecioVenta },
                     new SqlParameter("@stock_minimo", SqlDbType.Int) { Value = producto.StockMinimo },
                     new SqlParameter("@stock_ideal", SqlDbType.Int) { Value = producto.StockIdeal },
+
+new SqlParameter("@tipo_stock", SqlDbType.NVarChar, 20) { Value = "Existencia" },
                     new SqlParameter("@stock_maximo", SqlDbType.Int) { Value = producto.StockMaximo },
-                    new SqlParameter("@id_categoria", SqlDbType.Int) { Value = producto.IdCategoria },
-                    new SqlParameter("@activo", SqlDbType.Bit) { Value = producto.Activo }
                 };
 
                 SqlParameter[] sqlParam = parametros.ToArray();
 
-                // Ejecutar el SP
-                DataTable dt = EjecConsultas(nombreSP, sqlParam);
-
-                // Si el SP retorna filas, se considera que se ejecutó correctamente
-                return dt.Rows.Count > 0;
+                // Ejecutar como non-query (el SP no retorna filas)
+                EjecConsultas(nombreSP, sqlParam, true);
+                return true;
             }
             catch (Exception ex)
             {

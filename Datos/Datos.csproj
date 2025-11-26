@@ -56,7 +56,6 @@
     <Compile Include="DTOs OrdenCompra\OrdenCompraCrearDTO.cs" />
     <Compile Include="DTOs OrdenCompra\RecepcionCompraRegistrarDTO.cs" />
     <Compile Include="DTOs Producto\ActualizarStockDTO.cs" />
-    <Compile Include="DTOs Producto\ProductoBuscarDTO.cs" />
     <Compile Include="DTOs Producto\ProductoDTO.cs" />
     <Compile Include="DTOs Producto\ProductoEliminarDTO.cs" />
     <Compile Include="DTOs Producto\ProductoListadoDTO.cs" />
@@ -90,11 +89,14 @@
     <Compile Include="DTOs Ventas\OrdenVentaDTO.cs" />
     <Compile Include="DTOs\CambioObligatorioDTO.cs" />
     <Compile Include="DTOs\CodigoPostalDTO.cs" />
+    <Compile Include="DTOs\DTOs_Categoria.cs" />
     <Compile Include="DTOs\HistorialContrasDTO.cs" />
     <Compile Include="DTOs\PersonaDTO.cs" />
     <Compile Include="DTOs\PreguntaDTO.cs" />
     <Compile Include="DTOs\RolDTO.cs" />
     <Compile Include="DTOs\UsuarioDTO.cs" />
+    <Compile Include="DTOs_Stock\ProductoBuscarDTO.cs" />
+    <Compile Include="DTOs_Stock\ProductoListadoDTO.cs" />
     <Compile Include="Od Bitacora\Od_RegistrarBitacora.cs" />
     <Compile Include="Od Clientes\Od_AltaCliente.cs" />
     <Compile Include="Od Clientes\Od_ModificarCliente.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Od Stock\Od_AltaOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_AltaProveedorContacto.cs" />
     <Compile Include="Od Stock\Od_AltaProveedorDireccion.cs" />
+    <Compile Include="Od Stock\Od_Categorias.cs" />
     <Compile Include="Od Stock\Od_ConsultarDetalleOrdenCompra.cs" />
     <Compile Include="Od Stock\Od_ConsultarOrdenesCompra.cs" />
     <Compile Include="Od Stock\Od_ModificarEstadoOrdenCompra.cs" />
@@ -166,6 +169,10 @@
       <Name>Sesion</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="procedures\sp_AltaProducto.sql" />
+    <Content Include="procedures\sp_ExisteCategoria.sql" />
+    <Content Include="procedures\sp_ListarCategorias.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

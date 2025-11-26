@@ -21,10 +21,11 @@ namespace Datos.Od_Stock
                 // Lista de parámetros
                 List<SqlParameter> parametros = new List<SqlParameter>
                 {
-                    new SqlParameter("@codigo", SqlDbType.VarChar, 50) { Value = producto.Codigo },
-                    new SqlParameter("@nombre", SqlDbType.VarChar, 100) { Value = producto.Nombre },
-                    new SqlParameter("@marca", SqlDbType.VarChar, 100) { Value = (object)producto.Marca ?? DBNull.Value },
-                    new SqlParameter("@descripcion", SqlDbType.VarChar, 255) { Value = (object)producto.Descripcion ?? DBNull.Value },
+                    new SqlParameter("@codigo", SqlDbType.NVarChar, 50) { Value = (object)producto.Codigo ?? DBNull.Value },
+                    new SqlParameter("@id_categoria", SqlDbType.Int) { Value = producto.IdCategoria },
+                    new SqlParameter("@nombre", SqlDbType.NVarChar, 150) { Value = (object)producto.Nombre ?? DBNull.Value },
+                    new SqlParameter("@descripcion", SqlDbType.NVarChar, 500) { Value = (object)producto.Descripcion ?? DBNull.Value },
+                    new SqlParameter("@marca", SqlDbType.NVarChar, 100) { Value = (object)producto.Marca ?? DBNull.Value },
                     new SqlParameter("@precio_compra", SqlDbType.Decimal)
                     {
                         Precision = 18,
@@ -40,8 +41,11 @@ namespace Datos.Od_Stock
                     new SqlParameter("@stock_minimo", SqlDbType.Int) { Value = producto.StockMinimo },
                     new SqlParameter("@stock_ideal", SqlDbType.Int) { Value = producto.StockIdeal },
                     new SqlParameter("@stock_maximo", SqlDbType.Int) { Value = producto.StockMaximo },
-                    new SqlParameter("@id_categoria", SqlDbType.Int) { Value = producto.IdCategoria },
-                    new SqlParameter("@activo", SqlDbType.Bit) { Value = producto.Activo }
+
+                    // Parámetros añadidos para compatibilidad con el SP en BD
+                    // Si su DTO incluye estas propiedades, reemplace los valores hardcodeados por producto.PuntoReposicion / producto.TipoStock
+                    new SqlParameter("@punto_reposicion", SqlDbType.Int) { Value = 0 },
+                    new SqlParameter("@tipo_stock", SqlDbType.NVarChar, 20) { Value = "Existencia" }
                 };
 
                 SqlParameter[] sqlParam = parametros.ToArray();

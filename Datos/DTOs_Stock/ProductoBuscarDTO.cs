@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace Datos.DTOs_Stock
 {
@@ -15,8 +11,10 @@ namespace Datos.DTOs_Stock
         public string Categoria { get; set; }
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
-        public int StockActual { get; set; }
+        public int StockActual { get; set; } // si se obtiene
+        public int StockMinimo { get; set; }
+        public int StockIdeal { get; set; }
+        public int StockMaximo { get; set; }
         public bool Activo { get; set; }
     }
 }
-

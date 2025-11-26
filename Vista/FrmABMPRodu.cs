@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using Datos.DTOs_Stock;
 using Negocio;
 
@@ -12,29 +15,128 @@ namespace Vista
     {
         private readonly N_Productos _nProductos = new N_Productos();
 
+        // Controles añadidos en tiempo de ejecución
+        private ComboBox cmbCategoria;
+        private ComboBox cmbTipoProducto;
+        private Label lblCategoria;
+        private Label lblTipoProducto;
+
         public FrmABMPRodu()
         {
             InitializeComponent();
             Load += FrmABMPRodu_Load;
 
-            // Conectar eventos (button2 ya está conectado en el diseñador)
-            button1.Click += button1_Click; // Agregar producto
-            button3.Click += button3_Click; // Eliminar
-            TXTCod.KeyDown += TXTCod_KeyDown; // Buscar por Enter
+            button1.Click += button1_Click;   // Agregar
+            button3.Click += button3_Click;   // Eliminar
+            TXTCod.KeyDown += TXTCod_KeyDown; // Buscar enter
+
+            // Crear combobox de categorías y tipo de producto dinámicamente
+            // (se agregan al formulario para no depender del diseñador)
+            cmbCategoria = new ComboBox
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Width = 180
+            };
+            lblCategoria = new Label
+            {
+                Text = "Categoría:",
+                AutoSize = true
+            };
+
+            cmbTipoProducto = new ComboBox
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Width = 120
+            };
+            cmbTipoProducto.Items.AddRange(new[] { "Existencia", "JIT" });
+            lblTipoProducto = new Label
+            {
+                Text = "Tipo producto:",
+                AutoSize = true
+            };
+
+            // Intentar ubicar los nuevos controles cerca de los existentes si existen
+            try
+            {
+                // Si existe TXTCat en el diseñador, colocamos el combo en su lugar y ocultamos el textbox
+                if (this.Controls.ContainsKey("TXTCat"))
+                {
+                    var tx = this.Controls["TXTCat"];
+                    lblCategoria.Location = new System.Drawing.Point(tx.Location.X, tx.Location.Y - 18);
+                    cmbCategoria.Location = tx.Location;
+                    tx.Visible = false;
+                }
+                else
+                {
+                    // fallback: colocarlo a la derecha del TXTNombre si existe
+                    if (this.Controls.ContainsKey("TXTNombre"))
+                    {
+                        var nameCtl = this.Controls["TXTNombre"];
+                        lblCategoria.Location = new System.Drawing.Point(nameCtl.Location.X + nameCtl.Width + 10, nameCtl.Location.Y - 18);
+                        cmbCategoria.Location = new System.Drawing.Point(nameCtl.Location.X + nameCtl.Width + 10, nameCtl.Location.Y);
+                    }
+                    else
+                    {
+                        lblCategoria.Location = new System.Drawing.Point(350, 20);
+                        cmbCategoria.Location = new System.Drawing.Point(350, 35);
+                    }
+                }
+
+                // Ubicar tipo de producto a la derecha del combo de categoría
+                lblTipoProducto.Location = new System.Drawing.Point(cmbCategoria.Location.X, cmbCategoria.Location.Y + 30);
+                cmbTipoProducto.Location = new System.Drawing.Point(cmbCategoria.Location.X, cmbCategoria.Location.Y + 48);
+            }
+            catch
+            {
+                lblCategoria.Location = new System.Drawing.Point(350, 20);
+                cmbCategoria.Location = new System.Drawing.Point(350, 35);
+                lblTipoProducto.Location = new System.Drawing.Point(350, 65);
+                cmbTipoProducto.Location = new System.Drawing.Point(350, 80);
+            }
+
+            this.Controls.Add(lblCategoria);
+            this.Controls.Add(cmbCategoria);
+            this.Controls.Add(lblTipoProducto);
+            this.Controls.Add(cmbTipoProducto);
         }
 
         private void FrmABMPRodu_Load(object sender, EventArgs e)
         {
-            // Inicializar combo de tipo de stock (si lo usas)
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Existencia");
-            comboBox1.Items.Add("JIT");
-            comboBox1.SelectedIndex = 0;
-
             ClearFields();
+            LoadCategories();
         }
 
-        // Buscar por código al presionar Enter en TXTCod
+        // Carga las categorías desde la BD y las pone en cmbCategoria
+        private void LoadCategories()
+        {
+            var cs = ConfigurationManager.ConnectionStrings["MiConexion"]?.ConnectionString;
+            if (string.IsNullOrWhiteSpace(cs))
+            {
+                MessageBox.Show("Cadena de conexión 'MiConexion' no encontrada en app.config. Las categorías no se cargarán.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var conn = new SqlConnection(cs))
+                using (var da = new SqlDataAdapter("SELECT id_categoria, nombre FROM Categorias ORDER BY nombre", conn))
+                {
+                    var dt = new DataTable();
+                    da.Fill(dt);
+
+                    cmbCategoria.DisplayMember = "nombre";
+                    cmbCategoria.ValueMember = "id_categoria";
+                    cmbCategoria.DataSource = dt;
+                    cmbCategoria.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error cargando categorías: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Buscar por código con Enter
         private void TXTCod_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -45,12 +147,11 @@ namespace Vista
             }
         }
 
-        // Realiza búsqueda y completa los campos si encuentra producto
         private ProductoBuscarDTO SearchAndFillByCode(string codigo)
         {
             if (string.IsNullOrWhiteSpace(codigo))
             {
-                MessageBox.Show("Ingresa un código para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ingresa un código.", "Atención");
                 return null;
             }
 
@@ -59,72 +160,79 @@ namespace Vista
                 var res = _nProductos.BuscarProducto(codigo, null, null);
                 if (!res.Success)
                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages));
                     return null;
                 }
 
-                if (res.Data == null || res.Data.Count == 0)
+                var dto = res.Data?.FirstOrDefault();
+                if (dto == null)
                 {
-                    MessageBox.Show("No se encontró el producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró el producto.");
                     return null;
                 }
 
-                var dto = res.Data.First();
                 FillFieldsFromBuscar(dto);
                 return dto;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error buscando producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
                 return null;
             }
         }
 
-        // Rellena los campos disponibles desde ProductoBuscarDTO
         private void FillFieldsFromBuscar(ProductoBuscarDTO dto)
         {
-            if (dto == null) return;
-
             TXTCod.Text = dto.Codigo;
             TXTNombre.Text = dto.Nombre;
             TXTMarca.Text = dto.Marca;
-            // TXTCat contiene el nombre de categoría en ProductoBuscarDTO; si aquí guardas ID, ajusta.
-            TXTCat.Text = dto.Categoria;
-            TXTPrecioCompra.Text = dto.PrecioCompra.ToString("0.00", CultureInfo.CurrentCulture);
-            TXTPrecioVenta.Text = dto.PrecioVenta.ToString("0.00", CultureInfo.CurrentCulture);
+            TXTPrecioCompra.Text = dto.PrecioCompra.ToString("0.00");
+            TXTPrecioVenta.Text = dto.PrecioVenta.ToString("0.00");
             TXTStockActual.Text = dto.StockActual.ToString();
-            // Otros campos (descripcion, stock min/ideal/max) quedan para completar manualmente si el SP no los devuelve.
+
+            try
+            {
+                if (dto.Categoria != null && cmbCategoria.DataSource != null)
+                {
+                    cmbCategoria.SelectedValue = dto.Categoria;
+                }
+            }
+            catch { /* ignore */ }
+
+            // tipo de producto: si tu DTO tiene info, mapear aquí. Por ahora no hay.
         }
 
-        // Agregar producto
         private void button1_Click(object sender, EventArgs e)
         {
             var errores = ValidateRequiredFields(out ProductoDTO nuevo);
-            if (errores.Any())
+
+            if (errores.Count > 0)
             {
-                MessageBox.Show(string.Join(Environment.NewLine, errores), "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(string.Join(Environment.NewLine, errores), "Validación");
                 return;
             }
+
+            // lectura opcional del tipo seleccionado
+            var tipoSeleccionado = cmbTipoProducto.SelectedItem?.ToString();
 
             try
             {
                 var res = _nProductos.CrearProducto(nuevo);
                 if (!res.Success)
                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages));
                     return;
                 }
 
-                MessageBox.Show("Producto creado correctamente.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Producto creado.");
                 ClearFields();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error creando producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error creando producto: " + ex.Message);
             }
         }
 
-        // Modificar producto (usa el código para buscar el id)
         private void button2_Click(object sender, EventArgs e)
         {
             var existing = SearchAndFillByCode(TXTCod.Text?.Trim());
@@ -142,13 +250,13 @@ namespace Vista
                 StockMinimo = ParseInt(TXTStockMinimo.Text),
                 StockIdeal = ParseInt(TXTStockIdeal.Text),
                 StockMaximo = ParseInt(TXTStockMaximo.Text),
-                IdCategoria = TryParseCategoriaId(TXTCat.Text),
+                IdCategoria = GetSelectedCategoryId(),
                 Activo = existing.Activo
             };
 
-            if (string.IsNullOrWhiteSpace(mod.Nombre))
+            if (mod.IdCategoria <= 0)
             {
-                MessageBox.Show("El nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La categoría debe ser un ID válido.");
                 return;
             }
 
@@ -157,25 +265,28 @@ namespace Vista
                 var res = _nProductos.ModificarProducto(mod);
                 if (!res.Success)
                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages));
                     return;
                 }
 
-                MessageBox.Show("Producto modificado correctamente.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Producto modificado.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error modificando producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error modificando: " + ex.Message);
             }
         }
 
-        // Eliminar producto (usa el código para buscar el id)
         private void button3_Click(object sender, EventArgs e)
         {
             var existing = SearchAndFillByCode(TXTCod.Text?.Trim());
             if (existing == null) return;
 
-            var ans = MessageBox.Show($"Confirma eliminar producto '{existing.Nombre}' (ID {existing.IdProducto})?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var ans = MessageBox.Show(
+                $"¿Eliminar '{existing.Nombre}' (ID {existing.IdProducto})?",
+                "Confirmar",
+                MessageBoxButtons.YesNo);
+
             if (ans != DialogResult.Yes) return;
 
             try
@@ -183,23 +294,24 @@ namespace Vista
                 var res = _nProductos.EliminarProducto(existing.IdProducto);
                 if (!res.Success)
                 {
-                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Join(Environment.NewLine, res.Messages));
                     return;
                 }
 
-                MessageBox.Show("Producto eliminado.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Producto eliminado.");
                 ClearFields();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error eliminando producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error eliminando: " + ex.Message);
             }
         }
 
-        // Validaciones mínimas y mapeo a DTO para crear
         private List<string> ValidateRequiredFields(out ProductoDTO dto)
         {
             var errors = new List<string>();
+            int idCat = GetSelectedCategoryId();
+
             dto = new ProductoDTO
             {
                 Codigo = TXTCod.Text?.Trim(),
@@ -211,40 +323,43 @@ namespace Vista
                 StockMinimo = ParseInt(TXTStockMinimo.Text),
                 StockIdeal = ParseInt(TXTStockIdeal.Text),
                 StockMaximo = ParseInt(TXTStockMaximo.Text),
-                IdCategoria = TryParseCategoriaId(TXTCat.Text),
+                IdCategoria = idCat,
                 Activo = true
             };
 
             if (string.IsNullOrWhiteSpace(dto.Codigo)) errors.Add("El código es obligatorio.");
             if (string.IsNullOrWhiteSpace(dto.Nombre)) errors.Add("El nombre es obligatorio.");
-            if (dto.PrecioCompra < 0) errors.Add("Precio compra inválido.");
-            if (dto.PrecioVenta < 0) errors.Add("Precio venta inválido.");
+            if (dto.IdCategoria <= 0) errors.Add("La categoría debe ser seleccionada.");
+            if (cmbTipoProducto.SelectedIndex < 0) errors.Add("El tipo de producto debe seleccionarse (Existencia o JIT).");
 
             return errors;
         }
 
-        private string NullIfEmpty(string s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();
+        private int GetSelectedCategoryId()
+        {
+            try
+            {
+                if (cmbCategoria?.SelectedValue == null) return 0;
+                return Convert.ToInt32(cmbCategoria.SelectedValue);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        private string NullIfEmpty(string s) =>
+            string.IsNullOrWhiteSpace(s) ? null : s.Trim();
 
         private decimal ParseDecimal(string txt)
         {
-            if (string.IsNullOrWhiteSpace(txt)) return 0m;
-            if (decimal.TryParse(txt, NumberStyles.Any, CultureInfo.CurrentCulture, out var d)) return d;
-            if (decimal.TryParse(txt.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out d)) return d;
+            if (decimal.TryParse(txt, out var d)) return d;
             return 0m;
         }
 
         private int ParseInt(string txt)
         {
-            if (string.IsNullOrWhiteSpace(txt)) return 0;
             if (int.TryParse(txt, out var i)) return i;
-            return 0;
-        }
-
-        private int TryParseCategoriaId(string txt)
-        {
-            // Si TXTCat contiene id entero, lo devolvemos.
-            // Si contiene nombre, queda para implementar búsqueda de categorías.
-            if (int.TryParse(txt, out var id)) return id;
             return 0;
         }
 
@@ -259,10 +374,13 @@ namespace Vista
             TXTStockMinimo.Text = "0";
             TXTStockIdeal.Text = "0";
             TXTStockMaximo.Text = "0";
-            TXTCat.Text = "";
             TXTStockActual.Text = "0";
             TXTProximovenc.Text = "";
             TXTLote.Text = "";
+            textBox12.Text = "";
+
+            if (cmbCategoria != null) cmbCategoria.SelectedIndex = -1;
+            if (cmbTipoProducto != null) cmbTipoProducto.SelectedIndex = -1;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Negocio
         private readonly Od_ListarProductos odList = new Od_ListarProductos();
         private readonly Od_BuscarProducto odBus = new Od_BuscarProducto();
         private readonly Od_ActualizarStock odActualizarStock = new Od_ActualizarStock();
+        private readonly Od_Categorias odCategorias = new Od_Categorias(); // <-- añadido
 
         // Alta de producto (validaciones de negocio)
         public BusinessResult CrearProducto(ProductoDTO producto)
@@ -41,6 +42,12 @@ namespace Negocio
 
             if (producto.StockMinimo < 0 || producto.StockIdeal < 0 || producto.StockMaximo < 0)
                 res.AddError("Los valores de stock no pueden ser negativos.");
+
+            // Validación extra: id_categoria debe ser válido y existir en BD
+            if (producto.IdCategoria <= 0)
+                res.AddError("La categoría no es válida. Seleccione una categoría existente.");
+            else if (!odCategorias.ExisteCategoria(producto.IdCategoria))
+                res.AddError("La categoría indicada no existe en la base de datos.");
 
             if (!res.Success) return res;
 

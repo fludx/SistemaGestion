@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TuProyecto;
 
 namespace Vista
 {
@@ -114,7 +115,7 @@ namespace Vista
 
         private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmABM ventana = new FrmABM();  // Crear instancia del formulario
+            FrmABMPRodu2 ventana = new FrmABMPRodu2();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();
@@ -339,6 +340,16 @@ namespace Vista
         {
 
         }
+
+        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategorias ventana = new FrmCategorias();  // Crear instancia del formulario
+            ventana.ShowDialog();                         // Mostrar formulario como diálogo modal
+
+            this.Hide();
+        }
     }
+   
     }
+    
 
