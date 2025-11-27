@@ -97,6 +97,9 @@
     <Compile Include="FrmABMProveedoresClientes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmABMProveedoresClientes.Designer.cs">
+      <DependentUpon>FrmABMProveedoresClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMPRodu2.resx">
       <DependentUpon>FrmABMPRodu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMProveedoresClientes.resx">
+      <DependentUpon>FrmABMProveedoresClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregAdmin.resx">
       <DependentUpon>FrmAgregAdmin.cs</DependentUpon>

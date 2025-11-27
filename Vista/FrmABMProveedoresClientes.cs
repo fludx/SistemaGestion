@@ -10,22 +10,8 @@ using Datos.DTOs_Stock;
 
 namespace Vista
 {
-    public class FrmABMProveedoresClientes : Form
+    public partial class FrmABMProveedoresClientes : Form
     {
-        private TabControl tabs;
-        private TabPage tabProveedores;
-        private TabPage tabClientes;
-
-        // Proveedores controls
-        private DataGridView dgvProveedores;
-        private TextBox txtProvCodigo, txtProvRazon, txtProvEmail, txtProvFormasPago, txtProvTiemposEntrega, txtProvDescuentos;
-        private Button btnProvNuevo, btnProvGuardar, btnProvEditar, btnProvEliminar, btnProvRefrescar;
-
-        // Clientes controls
-        private DataGridView dgvClientes;
-        private TextBox txtCliCodigo, txtCliRazon, txtCliEmail, txtCliFormasPago, txtCliDescuentos, txtCliLimite;
-        private Button btnCliNuevo, btnCliGuardar, btnCliEditar, btnCliEliminar, btnCliRefrescar;
-
         private readonly N_Proveedores _nProveedores = new N_Proveedores();
         private readonly LogicClientes _logicClientes = new LogicClientes();
 
@@ -38,102 +24,28 @@ namespace Vista
             Text = "ABM Proveedores y Clientes";
             Size = new Size(920, 600);
             StartPosition = FormStartPosition.CenterParent;
-            InitializeComponent();
+
+            // Llama al InitializeComponent generado por el diseñador (.Designer.cs)
+                InitializeComponent();
+
+            // Asocia eventos a los controles creados por el diseñador
             Load += FrmABMProveedoresClientes_Load;
-        }
 
-        private void InitializeComponent()
-        {
-            tabs = new TabControl { Dock = DockStyle.Fill };
-
-            tabProveedores = new TabPage("Proveedores");
-            tabClientes = new TabPage("Clientes");
-
-            InitProveedoresTab();
-            InitClientesTab();
-
-            tabs.TabPages.Add(tabProveedores);
-            tabs.TabPages.Add(tabClientes);
-
-            Controls.Add(tabs);
-        }
-
-        private void InitProveedoresTab()
-        {
-            dgvProveedores = new DataGridView { Location = new Point(10, 10), Size = new Size(560, 480), ReadOnly = true, SelectionMode = DataGridViewSelectionMode.FullRowSelect, AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill };
-            dgvProveedores.CellClick += DgvProveedores_CellClick;
-
-            int left = 590, top = 20, w = 300, h = 26, gap = 34;
-
-            txtProvCodigo = LabeledTextBox(tabProveedores, "Código", left, top + gap * 0, w);
-            txtProvRazon = LabeledTextBox(tabProveedores, "Razón social", left, top + gap * 1, w);
-            txtProvEmail = LabeledTextBox(tabProveedores, "Email", left, top + gap * 2, w);
-            txtProvFormasPago = LabeledTextBox(tabProveedores, "Formas pago", left, top + gap * 3, w);
-            txtProvTiemposEntrega = LabeledTextBox(tabProveedores, "Tiempos entrega", left, top + gap * 4, w);
-            txtProvDescuentos = LabeledTextBox(tabProveedores, "Descuentos", left, top + gap * 5, w);
-
-            btnProvNuevo = CreateButton("Nuevo", left, top + gap * 7);
-            btnProvGuardar = CreateButton("Guardar", left + 130, top + gap * 7);
-            btnProvEditar = CreateButton("Editar", left, top + gap * 8);
-            btnProvEliminar = CreateButton("Eliminar", left + 130, top + gap * 8);
-            btnProvRefrescar = CreateButton("Refrescar", left, top + gap * 9);
-
+            // Proveedores events
             btnProvNuevo.Click += BtnProvNuevo_Click;
             btnProvGuardar.Click += BtnProvGuardar_Click;
             btnProvEditar.Click += BtnProvEditar_Click;
             btnProvEliminar.Click += BtnProvEliminar_Click;
             btnProvRefrescar.Click += BtnProvRefrescar_Click;
+            dgvProveedores.CellClick += DgvProveedores_CellClick;
 
-            tabProveedores.Controls.AddRange(new Control[] {
-                dgvProveedores, txtProvCodigo, txtProvRazon, txtProvEmail, txtProvFormasPago, txtProvTiemposEntrega, txtProvDescuentos,
-                btnProvNuevo, btnProvGuardar, btnProvEditar, btnProvEliminar, btnProvRefrescar
-            });
-        }
-
-        private void InitClientesTab()
-        {
-            dgvClientes = new DataGridView { Location = new Point(10, 10), Size = new Size(560, 480), ReadOnly = true, SelectionMode = DataGridViewSelectionMode.FullRowSelect, AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill };
-            dgvClientes.CellClick += DgvClientes_CellClick;
-
-            int left = 590, top = 20, w = 300, h = 26, gap = 34;
-
-            txtCliCodigo = LabeledTextBox(tabClientes, "Código", left, top + gap * 0, w);
-            txtCliRazon = LabeledTextBox(tabClientes, "Razón social", left, top + gap * 1, w);
-            txtCliEmail = LabeledTextBox(tabClientes, "Email", left, top + gap * 2, w);
-            txtCliFormasPago = LabeledTextBox(tabClientes, "Formas pago", left, top + gap * 3, w);
-            txtCliDescuentos = LabeledTextBox(tabClientes, "Descuentos", left, top + gap * 4, w);
-            txtCliLimite = LabeledTextBox(tabClientes, "Límite crédito", left, top + gap * 5, w);
-
-            btnCliNuevo = CreateButton("Nuevo", left, top + gap * 7);
-            btnCliGuardar = CreateButton("Guardar", left + 130, top + gap * 7);
-            btnCliEditar = CreateButton("Editar", left, top + gap * 8);
-            btnCliEliminar = CreateButton("Eliminar", left + 130, top + gap * 8);
-            btnCliRefrescar = CreateButton("Refrescar", left, top + gap * 9);
-
+            // Clientes events
             btnCliNuevo.Click += BtnCliNuevo_Click;
             btnCliGuardar.Click += BtnCliGuardar_Click;
             btnCliEditar.Click += BtnCliEditar_Click;
             btnCliEliminar.Click += BtnCliEliminar_Click;
             btnCliRefrescar.Click += BtnCliRefrescar_Click;
-
-            tabClientes.Controls.AddRange(new Control[] {
-                dgvClientes, txtCliCodigo, txtCliRazon, txtCliEmail, txtCliFormasPago, txtCliDescuentos, txtCliLimite,
-                btnCliNuevo, btnCliGuardar, btnCliEditar, btnCliEliminar, btnCliRefrescar
-            });
-        }
-
-        private TextBox LabeledTextBox(Control parent, string label, int x, int y, int width)
-        {
-            var lbl = new Label { Text = label, Location = new Point(x, y - 20), AutoSize = true, Font = new Font("Consolas", 9, FontStyle.Bold) };
-            parent.Controls.Add(lbl);
-            var tb = new TextBox { Location = new Point(x, y), Size = new Size(width, 24), Font = new Font("Consolas", 10, FontStyle.Regular) };
-            parent.Controls.Add(tb);
-            return tb;
-        }
-
-        private Button CreateButton(string text, int x, int y)
-        {
-            return new Button { Text = text, Location = new Point(x, y), Size = new Size(120, 34), BackColor = Color.Blue, ForeColor = Color.White, Font = new Font("Consolas", 9, FontStyle.Bold) };
+            dgvClientes.CellClick += DgvClientes_CellClick;
         }
 
         private void FrmABMProveedoresClientes_Load(object sender, EventArgs e)
@@ -197,7 +109,6 @@ namespace Vista
                 Descuentos = txtProvDescuentos.Text.Trim()
             };
 
-            // Validaciones básicas
             var errors = new List<string>();
             if (string.IsNullOrWhiteSpace(dto.Codigo)) errors.Add("Código es obligatorio.");
             if (string.IsNullOrWhiteSpace(dto.RazonSocial)) errors.Add("Razón social es obligatoria.");
