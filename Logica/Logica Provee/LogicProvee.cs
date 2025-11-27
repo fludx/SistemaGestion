@@ -20,6 +20,8 @@ namespace Negocio
         private readonly Od_ProductosDeProveedor odProdDeProv = new Od_ProductosDeProveedor();
         private readonly Od_ProveedoresDeProducto odProvDeProd = new Od_ProveedoresDeProducto();
         private readonly Od_RelacionarProductoProveedor odRelacion = new Od_RelacionarProductoProveedor();
+        // Añadir campo
+        private readonly Od_DesasignarProductoProveedor odDesasignar = new Od_DesasignarProductoProveedor();
 
         public BusinessResult CrearProveedor(ProveedorDTO proveedor)
         {
@@ -171,6 +173,24 @@ namespace Negocio
             catch (Exception ex)
             {
                 res.AddError("Error relacionando producto-proveedor: " + ex.Message);
+                return res;
+            }
+        }
+
+        // Añadir método público
+        public BusinessResult DesasignarProductoProveedor(int idProveedor, int idProducto)
+        {
+            var res = new BusinessResult();
+            if (idProveedor <= 0 || idProducto <= 0) { res.AddError("Proveedor o producto inválido."); return res; }
+            try
+            {
+                bool ok = odDesasignar.Desasignar(idProveedor, idProducto);
+                if (!ok) res.AddError("No se pudo desasignar la relación.");
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.AddError("Error desasignando relación: " + ex.Message);
                 return res;
             }
         }

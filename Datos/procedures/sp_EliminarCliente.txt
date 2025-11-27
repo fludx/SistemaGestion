@@ -1,8 +1,0 @@
-CREATE OR ALTER PROCEDURE dbo.sp_EliminarCliente
-    @id_cliente INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    DELETE FROM Clientes WHERE id_cliente = @id_cliente;
-END
-GO

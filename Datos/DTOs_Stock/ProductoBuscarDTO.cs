@@ -11,10 +11,20 @@ namespace Datos.DTOs_Stock
         public string Categoria { get; set; }
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
-        public int StockActual { get; set; } // si se obtiene
+
+        // Stocks y límites
+        public int StockActual { get; set; }
         public int StockMinimo { get; set; }
         public int StockIdeal { get; set; }
         public int StockMaximo { get; set; }
+
+        // Información por lote/vencimiento (opcional)
+        public string Lote { get; set; }
+        public DateTime? FechaVencimiento { get; set; }
+
+        // Tipo de stock: 'Existencia' o 'JIT'
+        public string TipoStock { get; set; }
+
         public bool Activo { get; set; }
     }
 }

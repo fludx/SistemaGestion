@@ -1,4 +1,4 @@
-﻿using Datos.Conecction;
+using Datos.Conecction;
 using Datos.DTOs_Stock;
 using System;
 using System.Collections.Generic;
@@ -7,37 +7,40 @@ using System.Data.SqlClient;
 
 namespace Datos.Od_Stock
 {
-    public class Od_ProductosDeProveedor : Ejeconsultas_Stock
+    public class Od_ProductosProximosVencer : Ejeconsultas_Stock
     {
-        public List<ProductoProveedorDTO> ConsultarProductosDeProveedor(int idProveedor)
+        public List<ProductoVencimientoDTO> Consultar(int dias)
         {
             try
             {
-                string nombreSP = "sp_ProductosDeProveedor";
+                string nombreSP = "sp_ProductosProximosVencer";
                 SqlParameter[] sqlParam = new SqlParameter[]
                 {
-                    new SqlParameter("@id_proveedor", System.Data.SqlDbType.Int) { Value = idProveedor }
+                    new SqlParameter("@dias", SqlDbType.Int) { Value = dias }
                 };
 
                 DataTable dt = EjecConsultas(nombreSP, sqlParam);
-                var list = new List<ProductoProveedorDTO>();
+
+                var list = new List<ProductoVencimientoDTO>();
+
                 foreach (DataRow r in dt.Rows)
                 {
-                    list.Add(new ProductoProveedorDTO
+                    list.Add(new ProductoVencimientoDTO
                     {
                         IdProducto = r.Table.Columns.Contains("id_producto") && r["id_producto"] != DBNull.Value ? Convert.ToInt32(r["id_producto"]) : 0,
                         Codigo = r.Table.Columns.Contains("codigo") && r["codigo"] != DBNull.Value ? r["codigo"].ToString() : "",
                         Nombre = r.Table.Columns.Contains("nombre") && r["nombre"] != DBNull.Value ? r["nombre"].ToString() : "",
-                        Marca = r.Table.Columns.Contains("marca") && r["marca"] != DBNull.Value ? r["marca"].ToString() : "",
-                        PrecioCompra = r.Table.Columns.Contains("precio_compra") && r["precio_compra"] != DBNull.Value ? Convert.ToDecimal(r["precio_compra"]) : 0m,
-                        PrecioVenta = r.Table.Columns.Contains("precio_venta") && r["precio_venta"] != DBNull.Value ? Convert.ToDecimal(r["precio_venta"]) : 0m
+                        Lote = r.Table.Columns.Contains("lote") && r["lote"] != DBNull.Value ? r["lote"].ToString() : "",
+                        Vencimiento = r.Table.Columns.Contains("vencimiento") && r["vencimiento"] != DBNull.Value ? (DateTime?)Convert.ToDateTime(r["vencimiento"]) : null,
+                        Cantidad = r.Table.Columns.Contains("cantidad") && r["cantidad"] != DBNull.Value ? Convert.ToInt32(r["cantidad"]) : 0
                     });
                 }
+
                 return list;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error consultando productos de proveedor: " + ex.Message);
+                throw new Exception("Error al ejecutar sp_ProductosProximosVencer: " + ex.Message);
             }
         }
     }

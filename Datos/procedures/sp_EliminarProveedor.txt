@@ -1,8 +1,0 @@
-CREATE OR ALTER PROCEDURE dbo.sp_EliminarProveedor
-    @id_proveedor INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    DELETE FROM Proveedores WHERE id_proveedor = @id_proveedor;
-END
-GO

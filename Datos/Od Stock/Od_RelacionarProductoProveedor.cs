@@ -1,12 +1,7 @@
 ﻿using Datos.Conecction;
 using Datos.DTOs_Stock;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Od_Stock
 {
@@ -16,22 +11,17 @@ namespace Datos.Od_Stock
         {
             try
             {
-                string nombreSP = "sp_RelacionarProductoProveedor";
+                string nombreSP = "sp_AsignarProductoAProveedor";
 
-                // Parámetros del procedimiento almacenado
-                List<SqlParameter> parametros = new List<SqlParameter>
+                SqlParameter[] sqlParam = new SqlParameter[]
                 {
-                    new SqlParameter("@id_producto", SqlDbType.Int) { Value = relacion.IdProducto },
-                    new SqlParameter("@id_proveedor", SqlDbType.Int) { Value = relacion.IdProveedor }
+                    new SqlParameter("@id_proveedor", System.Data.SqlDbType.Int) { Value = relacion.IdProveedor },
+                    new SqlParameter("@id_producto", System.Data.SqlDbType.Int) { Value = relacion.IdProducto }
                 };
 
-                SqlParameter[] sqlParam = parametros.ToArray();
-
-                // Ejecutar el SP
-                DataTable dt = EjecConsultas(nombreSP, sqlParam);
-
-                // Si el procedimiento afectó filas, es exitoso
-                return dt.Rows.Count > 0;
+                // Ejecutar como non-query
+                EjecConsultas(nombreSP, sqlParam, true);
+                return true;
             }
             catch (Exception ex)
             {

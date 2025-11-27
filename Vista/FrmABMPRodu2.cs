@@ -97,6 +97,32 @@ namespace Vista
             ClearFields();
             LoadCategories();
             PopulateCodeCombo();
+
+            // Mostrar aviso de punto de reposicion
+            try
+            {
+                var rp = _nProductos.VerificarPuntoReposicion();
+                if (rp != null && rp.Success && rp.Data != null && rp.Data.Any())
+                {
+                    var msg = $"Hay {rp.Data.Count} productos por debajo del punto de reposición:" + Environment.NewLine
+                              + string.Join(Environment.NewLine, rp.Data.Select(x => $"{x.Codigo} - {x.Nombre} (stock: {x.StockTotal}, punto: {x.PuntoReposicion})"));
+                    MessageBox.Show(msg, "Productos por debajo del punto de reposición", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { /* no bloquear carga por errores */ }
+
+            // Aviso de próximos a vencer por defecto (30 días)
+            try
+            {
+                var pv = _nProductos.ProductosProximosVencer(30);
+                if (pv != null && pv.Success && pv.Data != null && pv.Data.Any())
+                {
+                    var msg2 = $"Hay {pv.Data.Count} lotes próximos a vencer en 30 días:" + Environment.NewLine
+                               + string.Join(Environment.NewLine, pv.Data.Select(x => $"{x.Codigo} - {x.Nombre} (venc: {x.Vencimiento:dd/MM/yyyy}, lote: {x.Lote}, cant: {x.Cantidad})"));
+                    MessageBox.Show(msg2, "Próximos a vencer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch { }
         }
 
         // ================================================================
@@ -342,6 +368,54 @@ namespace Vista
 
             if (res != null && res.Success)
             {
+                // Si el usuario indicó cantidad/lote/vencimiento en el formulario, insertar stock inicial
+                int cantidadInicial = ParseIntSafe(TXTStockActual.Text);
+                string lote = TXTLote?.Text?.Trim();
+                DateTime? venc = null;
+                if (dtpVencimiento != null && dtpVencimiento.Checked)
+                    venc = dtpVencimiento.Value.Date;
+
+                if (cantidadInicial > 0)
+                {
+                    try
+                    {
+                        // Buscar el producto creado para obtener su Id
+                        var busc = _nProductos.BuscarProducto(dto.Codigo);
+                        var created = busc?.Data?.FirstOrDefault();
+                        if (created != null)
+                        {
+                            var stockDto = new ActualizarStockDTO
+                            {
+                                IdProducto = created.IdProducto,
+                                Cantidad = cantidadInicial,
+                                Lote = string.IsNullOrEmpty(lote) ? null : lote,
+                                Vencimiento = venc,
+                                TipoMovimiento = "Entrada",
+                                Observacion = "Ingreso inicial por alta de producto"
+                            };
+
+                            var resStock = _nProductos.ActualizarStock(stockDto);
+                            if (resStock != null && resStock.Success)
+                            {
+                                MessageBox.Show("Stock inicial registrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo registrar stock inicial: " + (resStock?.Messages != null ? string.Join(Environment.NewLine, resStock.Messages) : "Error"), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            // no se encontró producto recién creado (raro)
+                            MessageBox.Show("Producto creado pero no se pudo recuperar su Id para registrar stock inicial.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al registrar stock inicial: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
                 ClearFields();
                 PopulateCodeCombo();
             }
@@ -523,6 +597,23 @@ namespace Vista
             TXTPrecioCompra.Text = p.PrecioCompra.ToString("0.00");
             TXTPrecioVenta.Text = p.PrecioVenta.ToString("0.00");
             TXTStockActual.Text = p.StockActual.ToString();
+            TXTStockMinimo.Text = p.StockMinimo.ToString();
+            TXTStockIdeal.Text = p.StockIdeal.ToString();
+            TXTStockMaximo.Text = p.StockMaximo.ToString();
+            if (cmbTipo != null)
+            {
+                if (!string.IsNullOrEmpty(p.TipoStock))
+                {
+                    for (int i = 0; i < cmbTipo.Items.Count; i++)
+                    {
+                        if (cmbTipo.GetItemText(cmbTipo.Items[i]).Equals(p.TipoStock, StringComparison.OrdinalIgnoreCase))
+                        {
+                            cmbTipo.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
 
             try
             {

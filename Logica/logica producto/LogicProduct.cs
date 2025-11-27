@@ -18,6 +18,10 @@ namespace Negocio
         private readonly Od_ActualizarStock odActualizarStock = new Od_ActualizarStock();
         private readonly Od_Categorias odCategorias = new Od_Categorias(); // <-- añadido
 
+        // Nuevos OD para reportes/verificaciones
+        private readonly Od_VerificarPuntoReposicion odVerificarPunto = new Od_VerificarPuntoReposicion();
+        private readonly Od_ProductosProximosVencer odProdProximos = new Od_ProductosProximosVencer();
+
         // Alta de producto (validaciones de negocio)
         public BusinessResult CrearProducto(ProductoDTO producto)
         {
@@ -155,6 +159,45 @@ namespace Negocio
             catch (Exception ex)
             {
                 res.AddError("Error actualizando stock: " + ex.Message);
+                return res;
+            }
+        }
+
+        // =======================================================
+        // Nuevos métodos para requisitos RF-04 y RF-05
+        // =======================================================
+
+        // Devuelve lista de productos por debajo del punto de reposición (usa sp_VerificarPuntoReposicion)
+        public BusinessResult<List<VerificarPuntoReposicionDTO>> VerificarPuntoReposicion()
+        {
+            var res = new BusinessResult<List<VerificarPuntoReposicionDTO>>();
+            try
+            {
+
+                var lista = odVerificarPunto.ObtenerProductosBajoReposicion();
+                res.Data = lista;
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.AddError("Error verificando punto de reposición: " + ex.Message);
+                return res;
+            }
+        }
+
+        // Devuelve productos con vencimiento próximo en 'dias' días (usa sp_ProductosProximosVencer)
+        public BusinessResult<List<ProductoVencimientoDTO>> ProductosProximosVencer(int dias)
+        {
+            var res = new BusinessResult<List<ProductoVencimientoDTO>>();
+            try
+            {
+                var lista = odProdProximos.Consultar(dias);
+                res.Data = lista;
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res.AddError("Error obteniendo productos próximos a vencer: " + ex.Message);
                 return res;
             }
         }

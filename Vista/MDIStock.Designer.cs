@@ -34,6 +34,7 @@
             this.buscarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarProveedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.agregarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relacionProductoProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -125,12 +126,20 @@
             this.buscarProveedorToolStripMenuItem1.Text = "Buscar Proveedor";
             this.buscarProveedorToolStripMenuItem1.Click += new System.EventHandler(this.buscarProveedorToolStripMenuItem1_Click);
             // 
+            // agregarCategoriaToolStripMenuItem
+            // 
+            this.agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
+            this.agregarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
+            this.agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
+            this.agregarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.agregarCategoriaToolStripMenuItem_Click);
+            // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buscarProveedorToolStripMenuItem,
             this.agregarProveedorToolStripMenuItem,
-            this.buscarProductoToolStripMenuItem});
+            this.buscarProductoToolStripMenuItem,
+            this.relacionProductoProveedorToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(120, 23);
@@ -139,21 +148,21 @@
             // buscarProveedorToolStripMenuItem
             // 
             this.buscarProveedorToolStripMenuItem.Name = "buscarProveedorToolStripMenuItem";
-            this.buscarProveedorToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
+            this.buscarProveedorToolStripMenuItem.Size = new System.Drawing.Size(321, 24);
             this.buscarProveedorToolStripMenuItem.Text = "Buscar proveedor";
             this.buscarProveedorToolStripMenuItem.Click += new System.EventHandler(this.buscarProveedorToolStripMenuItem_Click);
             // 
             // agregarProveedorToolStripMenuItem
             // 
             this.agregarProveedorToolStripMenuItem.Name = "agregarProveedorToolStripMenuItem";
-            this.agregarProveedorToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
+            this.agregarProveedorToolStripMenuItem.Size = new System.Drawing.Size(321, 24);
             this.agregarProveedorToolStripMenuItem.Text = "Agregar proveedor";
             this.agregarProveedorToolStripMenuItem.Click += new System.EventHandler(this.agregarProveedorToolStripMenuItem_Click);
             // 
             // buscarProductoToolStripMenuItem
             // 
             this.buscarProductoToolStripMenuItem.Name = "buscarProductoToolStripMenuItem";
-            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
+            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(321, 24);
             this.buscarProductoToolStripMenuItem.Text = "Buscar producto";
             this.buscarProductoToolStripMenuItem.Click += new System.EventHandler(this.buscarProductoToolStripMenuItem_Click);
             // 
@@ -415,12 +424,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // agregarCategoriaToolStripMenuItem
+            // relacionProductoProveedorToolStripMenuItem
             // 
-            this.agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
-            this.agregarCategoriaToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
-            this.agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
-            this.agregarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.agregarCategoriaToolStripMenuItem_Click);
+            this.relacionProductoProveedorToolStripMenuItem.Name = "relacionProductoProveedorToolStripMenuItem";
+            this.relacionProductoProveedorToolStripMenuItem.Size = new System.Drawing.Size(321, 24);
+            this.relacionProductoProveedorToolStripMenuItem.Text = "Relacion producto proveedor";
+            this.relacionProductoProveedorToolStripMenuItem.Click += new System.EventHandler(this.relacionProductoProveedorToolStripMenuItem_Click);
             // 
             // MDIStock
             // 
@@ -488,6 +497,7 @@
         private System.Windows.Forms.ToolStripMenuItem notasDePedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mercaderiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarCategoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relacionProductoProveedorToolStripMenuItem;
     }
 }
 

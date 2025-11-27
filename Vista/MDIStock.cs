@@ -188,7 +188,7 @@ namespace Vista
         private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            FrmComp ventana = new FrmComp();  // Crear instancia del formulario
+            FrmOrdenCompra ventana = new FrmOrdenCompra();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();
@@ -347,6 +347,69 @@ namespace Vista
             ventana.ShowDialog();                         // Mostrar formulario como diálogo modal
 
             this.Hide();
+        }
+
+        private void relacionProductoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProdProv ventana = new FrmProdProv();  // Crear instancia del formulario
+            ventana.ShowDialog();                         // Mostrar formulario como diálogo modal
+
+            this.Hide();
+        }
+
+        private void OpenFrmOrdenCompra(object sender, EventArgs e)
+        {
+            // Reusar instancia si ya está abierta
+            var existing = this.MdiChildren.FirstOrDefault(f => f is FrmOrdenCompra) as FrmOrdenCompra;
+            if (existing != null)
+            {
+                existing.BringToFront();
+                existing.WindowState = FormWindowState.Normal;
+                return;
+            }
+
+            var frm = new FrmOrdenCompra
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            frm.Show();
+        }
+
+        private void OpenFrmRecepcionCompra(object sender, EventArgs e)
+        {
+            var existing = this.MdiChildren.FirstOrDefault(f => f is FrmRecepcionCompra) as FrmRecepcionCompra;
+            if (existing != null)
+            {
+                existing.BringToFront();
+                existing.WindowState = FormWindowState.Normal;
+                return;
+            }
+
+            var frm = new FrmRecepcionCompra
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            frm.Show();
+        }
+
+        private void OpenFrmReportesStock(object sender, EventArgs e)
+        {
+            var existing = this.MdiChildren.FirstOrDefault(f => f is FrmReportProductosStock) as FrmReportProductosStock;
+            if (existing != null)
+            {
+                existing.BringToFront();
+                existing.WindowState = FormWindowState.Normal;
+                return;
+            }
+
+            var frm = new FrmReportProductosStock
+            {
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
+            };
+            frm.Show();
         }
     }
    

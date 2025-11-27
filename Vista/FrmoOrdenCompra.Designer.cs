@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FrmProdProv
+    partial class FrmOrdenCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmProdProv
+            this.SuspendLayout();// 
+            // FrmOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FrmProdProv";
-            this.Text = "FrmProdProv";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "FrmOrdenCompra";
+            this.Text = "FrmOrdenCompra";
+            this.Load += new System.EventHandler(this.FrmOrdenCompra_Load);
             this.ResumeLayout(false);
 
         }

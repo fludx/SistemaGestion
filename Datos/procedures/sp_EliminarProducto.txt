@@ -1,8 +1,0 @@
-CREATE OR ALTER PROCEDURE dbo.sp_EliminarProducto
-    @id_producto INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    DELETE FROM Productos WHERE id_producto = @id_producto;
-END
-GO

@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -9,7 +9,7 @@ using Datos.DTOs_Stock;
 
 namespace Vista
 {
-    public class FrmOrdenCompra : Form
+    public partial class FrmOrdenCompra : Form
     {
         private ComboBox cmbProveedor;
         private ComboBox cmbProducto;
@@ -33,11 +33,11 @@ namespace Vista
 
         public FrmOrdenCompra()
         {
-            InitializeComponent();
+            InitializeComponenta();
             Load += FrmOrdenCompra_Load;
         }
 
-        private void InitializeComponent()
+        private void InitializeComponenta()
         {
             this.Text = "Crear Orden de Compra";
             this.Size = new Size(980, 620);

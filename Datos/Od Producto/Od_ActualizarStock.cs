@@ -4,40 +4,35 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Od_Stock
 {
     public class Od_ActualizarStock : Ejeconsultas_Stock
     {
-        public bool ActualizarStock(ActualizarStockDTO stockDTO)
+        public bool ActualizarStock(ActualizarStockDTO dto)
         {
             try
             {
                 string nombreSP = "sp_ActualizarStock";
 
-                // Parámetros del procedimiento almacenado
                 List<SqlParameter> parametros = new List<SqlParameter>
                 {
-                    new SqlParameter("@id_producto", SqlDbType.Int) { Value = stockDTO.IdProducto },
-                    new SqlParameter("@cantidad", SqlDbType.Int) { Value = stockDTO.Cantidad },
-                    new SqlParameter("@tipo_movimiento", SqlDbType.VarChar, 50) { Value = (object)stockDTO.TipoMovimiento ?? DBNull.Value },
-                    new SqlParameter("@observacion", SqlDbType.VarChar, 255) { Value = (object)stockDTO.Observacion ?? DBNull.Value }
+                    new SqlParameter("@id_producto", SqlDbType.Int) { Value = dto.IdProducto },
+                    new SqlParameter("@lote", SqlDbType.NVarChar, 50) { Value = (object)dto.Lote ?? DBNull.Value },
+                    new SqlParameter("@vencimiento", SqlDbType.Date) { Value = (object)dto.Vencimiento ?? DBNull.Value },
+                    new SqlParameter("@cantidad", SqlDbType.Int) { Value = dto.Cantidad }
                 };
 
                 SqlParameter[] sqlParam = parametros.ToArray();
 
-                // Ejecutar el SP
-                DataTable dt = EjecConsultas(nombreSP, sqlParam);
+                // El SP realiza inserts; ejecutar como non-query
+                EjecConsultas(nombreSP, sqlParam, true);
 
-                // Si devuelve filas, se considera exitoso
-                return dt.Rows.Count > 0;
+                return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al actualizar el stock del producto: " + ex.Message);
+                throw new Exception("Error al actualizar el stock: " + ex.Message);
             }
         }
     }
