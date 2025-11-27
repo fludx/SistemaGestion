@@ -69,7 +69,7 @@ namespace Vista
             }
         }
 
-           private void BtnBuscar_Click(object sender, EventArgs e)
+        private void BtnBuscar_Click(object sender, EventArgs e)
         {
             ApplyFilter();
         }
@@ -119,13 +119,29 @@ namespace Vista
             var item = dgvProveedores.Rows[e.RowIndex].DataBoundItem as ProveedorListadoDTO;
             if (item == null) return;
 
-            // Ejemplo: mostrar detalles o copiar código al portapapeles
-            MessageBox.Show($"Proveedor seleccionado:{Environment.NewLine}{item.RazonSocial} ({item.Codigo})", "Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Abrir o reutilizar FrmABMProveedoresClientes y seleccionar el proveedor
             try
             {
-                Clipboard.SetText(item.Codigo ?? "");
+                var existing = Application.OpenForms.OfType<FrmABMProveedoresClientes>().FirstOrDefault();
+                FrmABMProveedoresClientes target;
+                if (existing != null)
+                {
+                    target = existing;
+                    if (!existing.Visible) existing.Show();
+                    existing.BringToFront();
+                }
+                else
+                {
+                    target = new FrmABMProveedoresClientes();
+                    target.Show();
+                }
+
+                target.SelectProveedorByCodigo(item.Codigo);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error abriendo formulario de Proveedores: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

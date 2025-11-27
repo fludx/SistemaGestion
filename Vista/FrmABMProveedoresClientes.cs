@@ -26,7 +26,7 @@ namespace Vista
             StartPosition = FormStartPosition.CenterParent;
 
             // Llama al InitializeComponent generado por el diseñador (.Designer.cs)
-                InitializeComponent();
+            InitializeComponent();
 
             // Asocia eventos a los controles creados por el diseñador
             Load += FrmABMProveedoresClientes_Load;
@@ -305,7 +305,67 @@ namespace Vista
             }
             else
             {
+
+            }
+            {
                 MessageBox.Show("Operación exitosa.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // -------------------- Public helpers to allow external selection --------------------
+        /// <summary>
+        /// Busca proveedor por código en la fuente de datos y selecciona/llena los campos.
+        /// Útil para invocar desde formularios de búsqueda.
+        /// </summary>
+        public void SelectProveedorByCodigo(string codigo)
+        {
+            if (string.IsNullOrWhiteSpace(codigo)) return;
+            try
+            {
+                var res = _nProveedores.ListarProveedores();
+                if (res == null || !res.Success || res.Data == null)
+                {
+                    MessageBox.Show("No se pudieron obtener proveedores.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var item = res.Data.FirstOrDefault(p => string.Equals(p.Codigo, codigo, StringComparison.OrdinalIgnoreCase));
+                if (item == null)
+                {
+                    MessageBox.Show("Proveedor no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Seleccionar en la grilla si está visible
+                try
+                {
+                    dgvProveedores.DataSource = res.Data;
+                    for (int i = 0; i < dgvProveedores.Rows.Count; i++)
+                    {
+                        var rowItem = dgvProveedores.Rows[i].DataBoundItem as ProveedorListadoDTO;
+                        if (rowItem != null && string.Equals(rowItem.Codigo, codigo, StringComparison.OrdinalIgnoreCase))
+                        {
+                            dgvProveedores.ClearSelection();
+                            dgvProveedores.Rows[i].Selected = true;
+                            dgvProveedores.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+                    }
+                }
+                catch { /* ignore UI selection errors */ }
+
+                // Llenar campos
+                _currentProvId = item.IdProveedor;
+                txtProvCodigo.Text = item.Codigo;
+                txtProvRazon.Text = item.RazonSocial;
+                txtProvEmail.Text = item.Email;
+                txtProvFormasPago.Text = item.FormasPago;
+                txtProvTiemposEntrega.Text = item.TiemposEntrega;
+                txtProvDescuentos.Text = item.Descuentos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error buscando proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

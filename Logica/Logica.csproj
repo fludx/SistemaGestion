@@ -73,6 +73,7 @@
     <Compile Include="Logica Reportes\N_Reportes.cs" />
     <Compile Include="Logica Stock\LogicStock.cs" />
     <Compile Include="Logica Ventas\LogicVentas.cs" />
+    <Compile Include="Logica Ventas\N_Ventas.cs" />
     <Compile Include="PreguntaVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logica gestion\L_ResponderPreguntas.cs" />
