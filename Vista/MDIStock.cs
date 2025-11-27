@@ -139,7 +139,7 @@ namespace Vista
 
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmABM ventana = new FrmABM();  // Crear instancia del formulario
+            FrmABMProveedoresClientes ventana = new FrmABMProveedoresClientes();  // Crear instancia del formulario
             ventana.Show();                           // Mostrar formulario
 
             this.Hide();
