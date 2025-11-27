@@ -27,6 +27,7 @@ namespace Vista
             // Suscribir eventos (seguro si Designer ya declaró los controles)
             try { button1.Click += BtnBuscar_Click; } catch { }
             try { textBox1.KeyDown += TextBox1_KeyDown; } catch { }
+            try { textBox1.TextChanged += textBox1_TextChanged; } catch { }
             try { dgvProveedores.CellDoubleClick += DgvProveedores_CellDoubleClick; } catch { }
 
             // Inicializar combo de campos
@@ -81,6 +82,13 @@ namespace Vista
                 e.SuppressKeyPress = true;
                 ApplyFilter();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Habilita/deshabilita el botón Buscar según haya texto.
+            if (button1 != null && textBox1 != null)
+                button1.Enabled = !string.IsNullOrWhiteSpace(textBox1.Text);
         }
 
         private void ApplyFilter()
