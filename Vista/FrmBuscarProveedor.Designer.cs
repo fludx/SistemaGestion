@@ -1,4 +1,6 @@
-﻿namespace Vista
+﻿using System;
+
+namespace Vista
 {
     partial class FrmBuscarProveedor
     {
