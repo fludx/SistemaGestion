@@ -143,5 +143,20 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dgvProveedores;
+
+        // Declaraciones adicionales requeridas por FrmBuscarProveedor
+        private System.Windows.Forms.TextBox TXTCod;
+        private System.Windows.Forms.ComboBox cmbCodigo;
+        private System.Windows.Forms.TextBox TXTNombre;
+        private System.Windows.Forms.TextBox TXTMarca;
+        private System.Windows.Forms.TextBox TXTPrecioCompra;
+        private System.Windows.Forms.TextBox TXTPrecioVenta;
+        private System.Windows.Forms.TextBox TXTStockActual;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.TextBox TXTDescripcion;
+        private System.Windows.Forms.DateTimePicker dtpVencimiento;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
