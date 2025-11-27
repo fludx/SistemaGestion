@@ -94,6 +94,9 @@
     <Compile Include="FrmABMPRodu2.Designer.cs">
       <DependentUpon>FrmABMPRodu2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmABMProveedoresClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmAgregAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
